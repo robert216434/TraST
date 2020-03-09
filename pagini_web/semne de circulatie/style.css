@@ -1,0 +1,22 @@
+body {
+  background-color: lightblue;
+  text-align: center;
+  }
+
+  h1 {
+  line-height: 200px; 
+  font-size: 300%;
+  font-weight: bold;
+  }
+
+  div {
+    display: inline-block;
+  line-height: 50px; 
+  font-size: 150%;
+  font-weight: bold;
+  width: auto;
+  border: 10px solid darkblue;
+  padding: 30px;
+  margin: 200px;
+  }
+  
