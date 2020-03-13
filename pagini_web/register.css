@@ -1,6 +1,7 @@
 body{
     font-family: 'sans-serif';
     background-size: cover;
+    background-color: powderblue;
     height: 100vh;
     padding:0;
     margin:0;
@@ -37,7 +38,7 @@ body{
 }
   
 .submit-button {
-    background-color: #7c7c7c;
+    background-color: royalblue;
     border: 0px;
     color: white;
     padding: 12px 40px;
@@ -51,7 +52,13 @@ body{
 }
 
 .submit-button:hover{
-    background-color: #666666;
+    background-color: darkblue;
+    color:powderblue;
+}
+.submit-button:active{
+
+color: white;
+
 }
 
 #username-title{

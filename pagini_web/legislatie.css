@@ -24,6 +24,25 @@ cursor: pointer;
 color:powderblue;}
 
 .buton:active{color:white;}
+
+.butonLimba{
+  float: right;
+  background-color:royalblue;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  border: 0;
+  padding:16px;
+  text-decoration: none;
+  cursor: pointer;
+  
+  
+  }
+  .butonLimba:hover {background-color: #153969;
+  color:powderblue;}
+  
+  .butonLimba:active{color:white;}
+  
 .dropdown {
     float: left;
     overflow: hidden;
