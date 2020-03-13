@@ -1,0 +1,33 @@
+body {
+  background-color: powderblue;
+  text-align: center;
+  }
+
+img{
+
+  margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 7%;
+  }
+  div {
+  line-height: 50px; 
+  font-size: 200%;
+  font-weight: bold;
+  margin: 10px;
+  }
+
+  button {
+  
+    float: top;
+  
+  font-size: 100%;
+  background-color: royalblue;
+  font-weight: bold;
+  width: auto;
+  color: white;
+  
+  padding: 30px;
+  position: sticky;
+  }
+  

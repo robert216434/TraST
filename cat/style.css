@@ -1,0 +1,57 @@
+body {
+ 
+  text-align: center;
+  background-color: powderblue;
+  margin:0;
+  }
+h1 {
+  text-align: center;
+vertical-align: middle;
+line-height: auto; 
+font-size: 200%;
+font-weight: bold;
+}
+.Diviziuni button {
+  text-align: center;
+  
+vertical-align: middle;
+line-height: 10px; 
+font-size: 20px;
+font-weight: bold;
+background-color: royalblue;
+color: white;
+display: inline-block;
+width: 200px;
+border: 10px royalblue;
+padding: 30px;
+margin: 30px;
+}
+.Diviziuni button:hover {
+  color: powderblue;
+  background-color: #153969;
+}
+.Diviziuni button:active {
+  color:white;
+}
+
+.button {
+  background-color:royalblue;
+  border: none;
+  color:white;
+  padding: 15px 25px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 50px; 
+  font-size: 150%;
+  margin: 30px;
+  
+}
+.button:hover {
+  background-color:#153969;
+  color: powderblue;
+}
+
+.button:active{
+
+color:white;
+}

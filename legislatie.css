@@ -1,0 +1,145 @@
+
+.butoane
+{
+
+    overflow: hidden;
+   background-color: royalblue;
+    
+}
+
+.buton{
+float: left;
+background-color:royalblue;
+font-size: 16px;
+color: white;
+text-align: center;
+border: 0;
+padding:16px;
+text-decoration: none;
+cursor: pointer;
+
+
+}
+.buton:hover {background-color: #153969;
+color:powderblue;}
+
+.buton:active{color:white;}
+
+.butonLimba{
+  float: right;
+  background-color:royalblue;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  border: 0;
+  padding:16px;
+  text-decoration: none;
+  cursor: pointer;
+  
+  
+  }
+  .butonLimba:hover {background-color: #153969;
+  color:powderblue;}
+  
+  .butonLimba:active{color:white;}
+  
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding:16px;
+    background-color: inherit;
+    
+    margin: 0;
+  }
+ .dropdown .dropbtn:hover {background-color: #153969;
+color: powderblue;}
+
+.dropdown .dropbtn:active {
+  color: white;}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: powderblue;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    background-color:royalblue;
+    color: white;
+    text-align: center;
+
+  }
+
+  body
+{
+
+    background-color: powderblue;
+    margin:0;
+}
+p
+{
+font-size: 60px;
+text-align: center;
+padding: 60 px;
+
+}
+ 
+
+
+
+  .buton1:link, .buton1:visited {
+    background-color: #153969;
+    color: white;
+    padding: 14px 11px;
+    text-align: center;
+    text-decoration: none;
+    
+    
+   float: left;
+
+  }
+
+
+  .buton1:hover {
+    background-color:darkblue;
+    color: powderblue;
+  }
+
+
+  .buton1:active {
+   color:white;
+
+
+  }

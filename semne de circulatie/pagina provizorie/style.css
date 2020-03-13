@@ -1,0 +1,48 @@
+body {
+  background-color: powderblue;
+  text-align: center;
+  }
+
+  div {
+  line-height: 50px; 
+  font-size: 200%;
+  font-weight: bold;
+  margin: 10px;
+  }
+
+  p {
+  font-size: 120%;
+  }
+
+img{
+
+  margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+  }
+
+ .nextSIbackSiquit button {
+    display: inline-block;
+  line-height: 50px; 
+  font-size:auto;
+  background-color: royalblue;
+  font-weight: bold;
+ width: 200px;
+ height: 100px;
+  color: white;
+  padding: 10px;
+  margin: 10px;
+  }
+  .nextSIbackSiquit button:hover{
+background-color: darkblue;
+color: powderblue;
+
+
+  }
+  
+
+  .nextSIbackSiquit button:active{
+
+color: white;    
+  }
