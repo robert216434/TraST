@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
     <link rel="stylesheet" href="profil.css">
-    <link rel="stylesheet" href="butoane.css">
+	<link rel="stylesheet" href="butoane.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -13,30 +14,38 @@
     <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
     </header>
-<div class="butoane">
-<button class="buton" onclick="document.location='navbar.html'">Acasa</button>
-<button class="buton"onclick="document.location='login.html'">Autentificare</button>
-<div class="dropdown">
-    <button class="dropbtn">Selecteaza tara 
-    </button>
-    <div class="dropdown-content">
-      <a href="navbar.html">Romania</a>
-      <a href="navbarAngl.html">Anglia</a>
-      <a href="#">Inca una</a>
-    </div>
-  </div> 
-
-
-
-
-
-<button class="buton" onclick="document.location ='leg/legislatie.html'">Legislatie</button>
-<button class="buton" onclick="document.location='semne de circulatie/semne de circulatie.html'">Semne de circulatie</button>
-<button class="buton" onclick="document.location = 'cat/catergorii.html'">Teste</button>
-<button class="buton" onclick="document.location='Clasament.html'">Clasament</button>
-<button class="buton" onclick="document.location='profil.html'">Profil</button>
-<button class="butonLimba" onclick="document.location='profil-en.html'">English</button>
-</div>
+	<div class="topnav" id="myTopnav">
+		<a onclick="document.location='navbar.html'">Acasa</a>
+		<a onclick="document.location='login.html'">Autentificare</a>
+		<div class="dropdown">
+		  <button class="dropbtn">Selecteaza tara
+			<i class="fa fa-caret-down"></i>
+		  </button>
+		  <div class="dropdown-content">
+			<a onclick="document.location='navbar.html'">Romania</a>
+			<a onclick="document.location='navbarAngl.html'">Anglia</a>
+			<a onclick="document.location='#'">Inca una</a>
+		  </div>
+		</div>
+		<a onclick="document.location='leg/legislatie3.html'">Legislatie</a>
+		<a onclick="document.location='semne de circulatie.html'">Semne de circulatie</a>
+		<a onclick="document.location='catergorii.html'">Teste</a>
+		<a onclick="document.location='Clasament.html'">Clasament</a>
+		<a onclick="document.location='profil.html'">Profil</a>
+		<a onclick="document.location='profil-en.html'">English</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+	  </div>
+	
+	  <script>
+		function myFunction() {
+		  var x = document.getElementById("myTopnav");
+		  if (x.className === "topnav") {
+			x.className += " responsive";
+		  } else {
+			x.className = "topnav";
+		  }
+		}
+		</script>
 
 <div class="profile">
 	<div class="person-information">
@@ -51,10 +60,12 @@
 				Data nasterii: 19.05.1999<br>
 				Telefon: 0123456789
 		</p>
+
+
+
 	</div>
 </div>
 
 </body>
-
-<footer>Good bye!</footer>
+<footer>asd</footer>
 </html>

@@ -2,6 +2,7 @@
 body{
   font-family: 'sans-serif';
   background-color: powderblue; 
+  color:white;
  
 }
 
@@ -17,7 +18,7 @@ body{
 }
 
 .clasament-item{
-  background-color: royalblue;
+  background-color: black;
   border-collapse: collapse;
   width: 100%;
 }
@@ -32,7 +33,7 @@ body{
 }
 
 .clasament-item tr:nth-child(even){
-  background-color: powderblue;
+  background-color: #333;
 }
 
 .clasament-item td a{

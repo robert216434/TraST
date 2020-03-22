@@ -5,12 +5,13 @@
 <title>Untitled Document</title>
 	<link rel="stylesheet" href="clasament.css">
 	<link rel="stylesheet" href="butoane.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 
 
 
-<body>
+<body class="leg">
 
 
 	
@@ -18,29 +19,38 @@
 		<header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
 		
 		</header>
-	<div class="butoane">
-		<button class="buton" onclick="document.location ='navbarAngl-en.html'">Home</button>
-		<button class="buton" onclick="document.location='loginAng-en.html'">Authentification</button>
-		<div class="dropdown">
-			<button class="dropbtn">Select country 
-			</button>
-			<div class="dropdown-content">
-			  <a href="navbar-en.html">Romania</a>
-			  <a href="navbarAngl-en.html">England</a>
-			  <a href="#">Inca una</a>
+		<div class="topnav" id="myTopnav">
+			<a onclick="document.location='navbarAngl-en.html'">Home</a>
+			<a onclick="document.location='loginAng-en.html'">Authentification</a>
+			<div class="dropdown">
+			  <button class="dropbtn">Select country
+			  <i class="fa fa-caret-down"></i>
+			  </button>
+			  <div class="dropdown-content">
+			  <a onclick="document.location='navbar-en.html'">Romania</a>
+			  <a onclick="document.location='navbarAngl-en.html'">England</a>
+			  <a onclick="document.location='#'">Inca una</a>
+			  </div>
 			</div>
-		  </div> 
-		
-		
-		
-		
-		<button class="buton" onclick="document.location = 'leg/legislatie3-en.html'">Legislation</button>
-		<button class="buton" onclick="document.location='semne de circulatie/semne de circulatieAng-en.html'">Road signs</button>
-		<button class="buton" onclick="document.location ='cat/catergoriiAng-en.html'">Tests</button>
-		<button class="buton" onclick="document.location='ClasamentAng-en.html'">Ranking</button>
-		<button class="buton" onclick="document.location='profilAng-en.html'">Profile</button>
-		<button class="butonLimba" onclick="document.location='ClasamentAng.html'">Romana</button>
-</div>
+			<a onclick="document.location='leg/legislatie3-en.html'">Legislation</a>
+			<a onclick="document.location='semne de circulatieAng-en.html'">Road signs</a>
+			<a onclick="document.location='catergoriiAng-en.html'">Tests</a>
+			<a onclick="document.location='ClasamentAng-en.html'">Ranking</a>
+			<a onclick="document.location='profilAng-en.html'">Profile</a>
+			<a onclick="document.location='ClasamentAng.html'">Romana</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+			</div>
+		  
+			<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+			  x.className += " responsive";
+			  } else {
+			  x.className = "topnav";
+			  }
+			}
+			</script>
 
 	
 	
@@ -73,5 +83,6 @@
 
 </body>
 
-<footer>Good bye!</footer>
+<footer style="margin-top: 239px">
+	Good bye!</footer>
 </html>

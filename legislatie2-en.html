@@ -3,39 +3,48 @@
 <head>
 <title>Home Page</title>
 <link rel="stylesheet" href="legislatie.css">
+<link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
-<body>
+<body class="leg">
 
-    <header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
+  <header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
-    </header>
-<div class="butoane">
-  <button class="buton" onclick="document.location='navbar-en.html'">Home</button>
-  <button class="buton" onclick="document.location='login-en.html'">Authentification</button>
+  </header>
+<div class="topnav" id="myTopnav">
+  <a href="navbarAngl-en.html">Home</a>
+  <a href="loginAng-en.html">Authentification</a>
   <div class="dropdown">
-      <button class="dropbtn">Select country 
-      </button>
-      <div class="dropdown-content">
-        <a href="navbar-en.html">Romania</a>
-        <a href="navbarAngl-en.html">England</a>
-        <a href="#">Inca una</a>
-      </div>
-    </div> 
-  
-  
-  
-  
-  
-  <button class="buton" onclick="document.location ='leg/legislatie-en.html'">Legislation</button>
-  <button class="buton" onclick="document.location='semne de circulatie/semne de circulatie-en.html'">Road signs</button>
-  <button class="buton" onclick="document.location = 'cat/catergorii-en.html'">Tests</button>
-  <button class="buton" onclick="document.location='Clasament-en.html'">Ranking</button>
-  <button class="buton" onclick="document.location='profil-en.html'">Profile</button>
-  <button class="butonLimba" onclick="document.location='legislatie2.html'">Romana</button>
-</div>
+    <button class="dropbtn">Select country
+    <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+    <a href="navbar-en.html">Romania</a>
+    <a href="navbarAngl-en.html">England</a>
+    <a href="#">Another one</a>
+    </div>
+  </div>
+  <a href="leg/legislatie3-en.html">Legislation</a>
+  <a href="semne de circulatieAng-en.html">Road signs</a>
+  <a href="catergoriiAng-en.html">Tests</a>
+  <a href="ClasamentAng-en.html">Ranking</a>
+  <a href="profilAng-en.html">Profile</a>
+  <a href="profilAng.html">English</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+    x.className += " responsive";
+    } else {
+    x.className = "topnav";
+    }
+  }
+</script>
 <div class="butoane1" style="background-color: #153969;overflow: hidden;"><a class="buton1" href="capitolul1.html" target="iframe1">Chapter 1</a>
     <a class="buton1" href="capitolul1.html" target="iframe1">Chapter 1</a>
     <a class="buton1" href="capitolul1.html" target="iframe1">Chapter 2</a>
@@ -58,9 +67,9 @@
 </div>
 
 
-  <iframe height="500" width="100%" src="iframe-en.html" name="iframe1" style="position: relative;overflow: hidden;">
+  <iframe height="800" width="100%" src="iframe-en.html" name="iframe1" style="position: relative;overflow: hidden;">
     
-<footer>Good bye!</footer>
+    <footer class="homeF">Good Bye!</footer>
 
 
 </body>

@@ -1,8 +1,10 @@
 body{
-    background-color: powderblue;
+    border: none;
+    background-color: #ffffff;
     font-family: 'sans-serif';
     text-decoration: none;
     color: black;
+    margin: 0;
   }
   .profile-image{
     width:150px;
@@ -13,13 +15,13 @@ body{
   .person-information{
     display:inline-block;
     text-align: left;
-    margin-left:5%;
+    margin-left:20%;
   }
   
   .profile{
     width: 1200px;
     margin: 120px auto 120px;
-    background-color: powderblue;
+    background-color: #ffffff;
     padding: 0px 20px 20px;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.075);
@@ -47,7 +49,7 @@ body{
     .person-name,.person-information{
       text-align:center;
     }
-  
+
     .profile-image{
       display: block;
       margin-left: auto;

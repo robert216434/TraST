@@ -2,8 +2,8 @@
 <html lang='ro'>
 <head>
 <meta charset="UTF-8">
-<title>Categorii de permise</title>
-<link rel="stylesheet" href="paginatest.css">
+<title>Pagina indicatoare</title>
+<link rel="stylesheet" href="paginaindicatoare.css">
 <link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +11,7 @@
 
 <body>
 
- <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
+	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
   </header>
 <div class="topnav" id="myTopnav">
@@ -47,36 +47,18 @@
   }
   </script>
 
-<div style="float: left;display: block;"><p style="font-size: medium;">Timp ramas:</p>
-	<br></br>
-<p style="font-size: medium;">Raspunsuri corecte:</p>
-<br></br>
-<p style="font-size: medium;"> Raspunsuri gresite:</p>
+
+	<img src="imagini/accesulinterzis.png" alt="accesulinterzis">
+  <br></br>
+	<div1>Accesul interzis</div1>
+	<p>In general, se amplaseaza pe drumurile cu sens unic, pe sensul pe care nu este permisa circulatia. Interzice accesul tuturor vehiculelor (inclusiv bicicletelor si vehiculelor cu tractiune animala). Acest indicator poate fi insotit si de un panou aditional pe care sunt precizate categoriile de autovehicule care au voie sa intre pe sectorul de drum respectiv, carora nu li se adreseaza deci restrictia de fata.</p>
+	<div1 class="nextSIbackSiquit">
+	  <button onclick="document.location='pagina indicatoare.html'">Inapoi</button>
+	  <button onclick="document.location='pagina indicatoare.html'">Urmatorul</button>
+	  <button onclick="document.location='paginaintermediara.html'">Inapoi la pagina cu semne</button>
 
 
-</div>
-
-<h1>*Intrebare*</h1>
-	<img src="imagini/frog.jpg" alt="Poza" width="300" height="300" ></img>
-	
-	<h2>Variante de raspuns:</h2>
-	
-
-	
-	<button id="pA">raspuns A</button>
-	<br></br>
-
-	
-	<button id="pB">raspuns B</button>
-    <br></br>
-
-	<button id="pC">raspuns C</button>
-	<br></br>
-	<div class="divziune1">
-	<button class="Confirma" onclick="document.location='paginatest.html'">Confirma Raspunsurile</button>
-	<button class="Confirma" onclick="document.location='paginatest.html'">Inapoi</button>
-	<button class="Confirma" onclick="document.location='catergorii.html'">Paraseste testul</button>
-</div>
-<footer>Good bye!</footer>
+	</div1>
+<footer class='norisF'>Good bye!</footer>
 </body>
 </html>

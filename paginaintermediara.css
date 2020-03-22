@@ -1,6 +1,7 @@
 body {
-  background-color: powderblue;
+  
   text-align: center;
+  margin: 0;
   }
 
 img{
@@ -10,7 +11,7 @@ img{
     margin-right: auto;
     width: 7%;
   }
-  div {
+  .div1 {
   line-height: 50px; 
   font-size: 200%;
   font-weight: bold;
@@ -22,12 +23,17 @@ img{
     float: top;
   
   font-size: 100%;
-  background-color: royalblue;
-  font-weight: bold;
+  background-color: #333;
+  
   width: auto;
   color: white;
   
   padding: 30px;
   position: sticky;
+  }
+
+  button:hover{
+   background-color: #555;
+
   }
   

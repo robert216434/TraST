@@ -1,11 +1,39 @@
-.butoane1
-{
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
+body {
+ 
+  text-align: center;
+  background-color: white;
+  margin:0;
+  }
+h1 {
+  text-align: center;
+vertical-align: middle;
+line-height: auto; 
+font-size: 200%;
+font-weight: bold;
 }
+.Diviziuni button {
+  text-align: center;
+  
+vertical-align: middle;
+line-height: 10px; 
+font-size: 20px;
+font-weight: bold;
+background-color: #333;
+color: white;
+display: inline-block;
+width: 200px;
+border: 10px #333;
+padding: 30px;
+margin: 30px;
+}
+.Diviziuni button:hover {
+  color: white;
+  background-color: #555;
+}
+.Diviziuni button:active {
+  color:white;
+}
+
 .butoane
 {
 
@@ -15,7 +43,7 @@
 }
 
 .buton{
-float: left;
+float: center;
 background-color:#333;
 font-size: 16px;
 color: white;
@@ -27,8 +55,8 @@ cursor: pointer;
 
 
 }
-.buton:hover {background-color: #153969;
-color:powderblue;}
+.buton:hover {background-color: #555;
+color:white;}
 
 .buton:active{color:white;}
 
@@ -94,57 +122,4 @@ color: powderblue;}
   
   .dropdown:hover .dropdown-content {
     display: block;
-  }
-
-
-  footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    height: 30px;
-    width: 100%;
-    background-color:#333;
-    color: white;
-    text-align: center;
-
-  }
-
-  body
-{
-
-    background-color: white;
-    margin:0;
-}
-p
-{
-font-size: 60px;
-text-align: center;
-padding: 60 px;
-
-}
- 
-
-
-
-  .buton1:link, .buton1:visited {
-    background-color: #444;
-    color: white;
-    padding: 14px 11px;
-    text-align: center;
-    text-decoration: none;
-    
-    
-   float: left;
-
-  }
-
-
-  .buton1:hover {
-    background-color:#666;
-    color: white;
-  }
-
-
-  .buton1:active {
-   color:white;
   }

@@ -1,7 +1,7 @@
 body{
     font-family: 'sans-serif';
     background-image: url('');
-    background-color: powderblue;
+    background-color: white;
     background-size: cover;
     height: 100vh;
     padding:0;
@@ -29,7 +29,7 @@ body{
   }
   
   .submit-button {
-    background-color: royalblue;
+    background-color: #333;
     border: 0px;
     color: white;
     padding: 12px 40px;
@@ -43,8 +43,8 @@ body{
   }
   
   .submit-button:hover{
-    background-color: darkblue;
-    color: powderblue;
+    background-color: #555;
+    color: white;
   }
   .submit-button:active{
 
@@ -64,14 +64,14 @@ body{
   }
   
   .card{ 
-   position:fixed;
+   position:relative;
    top:20%;
    left:42%;
    width:250px; 
   }
   
   .sign-up-button{
-    background-color: royalblue;
+    background-color: #333;
     border: 0px;
     color: white;
     padding: 12px 40px;
@@ -85,8 +85,8 @@ body{
   }
   
   .sign-up-button:hover{
-    background-color: darkblue;
-    color: powderblue;
+    background-color: #555;
+    color: white;
 
   }
 
@@ -105,8 +105,5 @@ body{
         width:  250px;
      }
   }
-  
-  
-  /*footer*/
   
  

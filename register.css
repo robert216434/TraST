@@ -1,7 +1,7 @@
 body{
     font-family: 'sans-serif';
     background-size: cover;
-    background-color: powderblue;
+    
     height: 100vh;
     padding:0;
     margin:0;
@@ -38,7 +38,7 @@ body{
 }
   
 .submit-button {
-    background-color: royalblue;
+    background-color: #333;
     border: 0px;
     color: white;
     padding: 12px 40px;
@@ -52,8 +52,8 @@ body{
 }
 
 .submit-button:hover{
-    background-color: darkblue;
-    color:powderblue;
+    background-color: #555;
+   color: white;
 }
 .submit-button:active{
 
@@ -85,7 +85,7 @@ color: white;
 }
 
 .sign-up-button{
-    background-color: #7c7c7c;
+    background-color: #333;
     border: 0px;
     color: white;
     padding: 12px 40px;
@@ -99,7 +99,7 @@ color: white;
 }
 
 .sign-up-button:hover{
-    background-color: #666666;
+    background-color: #555;
 }
 
 @media screen and (max-width: 940px){
