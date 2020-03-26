@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Driving license categories</title>
-<link rel="stylesheet" href="categorii.css">
+<link rel="stylesheet" href="pagina_test.css">
 <link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +11,7 @@
 
 <body>
 
-	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
+<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
   </header>
 <div class="topnav" id="myTopnav">
@@ -32,7 +32,7 @@
   <a href="catergorii-en.html">Tests</a>
   <a href="Clasament-en.html">Ranking</a>
   <a href="profil-en.html">Profile</a>
-  <a href="catergorii.html">Romana</a>
+  <a href="profil.html">Romana</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
@@ -46,20 +46,36 @@
     }
   }
   </script>
-   
-<h1>Please select driving license category:</h1>
-<div class="Diviziuni">
-<button >A, A1, A2, AM</button>
-<button>B, B1, C, C1</button>
-<button>D, D1, Tb, Tv</button>
-<button>Tr</button>
-</div>
-<div>
-<button class="buton" onclick="document.location='paginatest-en.html'">Start test</button>
-<button class="buton" onclick="document.location='navbar-en.html'">Back to first page</button>
+
+<div style="float: left;display: block;"><p style="font-size: medium;">Time left:</p>
+	<br>
+<p style="font-size: medium;">Right answers:</p>
+<br>
+<p style="font-size: medium;">Wrong answers:</p>
+
+
 </div>
 
-<footer class="homeF">Good bye!</footer>
+<h1>*Question*</h1>
+	<img src="imagini/frog.jpg" alt="Poza" width="300" height="300" >
+	
+	<h2>Answers options:</h2>
+	
 
+	
+	<button id="pA">answer A</button>
+	<br>
+
+	
+	<button id="pB">answer B</button>
+    <br>
+
+	<button id="pC">answer C</button>
+	<br>
+	<div class="divziune1">
+	<button class="Confirma" onclick="document.location='paginatest-en.html'">Confirm Answers</button>
+	<button class="Confirma" onclick="document.location='paginatest-en.html'">Back</button>
+	<button class="Confirma" onclick="document.location='catergorii-en.html'">Leave test</button>
+</div>
 </body>
 </html>
