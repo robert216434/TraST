@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Driving license categories</title>
-<link rel="stylesheet" href="categorii.css">
+<link rel="stylesheet" href="paginatest.css">
 <link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -11,7 +11,7 @@
 
 <body>
 
-	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
+<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
   </header>
 <div class="topnav" id="myTopnav">
@@ -32,7 +32,7 @@
   <a href="catergorii-en.html">Tests</a>
   <a href="Clasament-en.html">Ranking</a>
   <a href="profil-en.html">Profile</a>
-  <a href="catergorii.html">Romana</a>
+  <a href="profil.html">Romana</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
 
@@ -45,34 +45,22 @@
     x.className = "topnav";
     }
   }
-
-  var count=1;
-function setColorA(btn1,btn2,btn3,btn4){
-  property=document.getElementById(btn1);
-  property.style.border = "2px solid red";
-  property=document.getElementById(btn2);
-  property.style.border ="none";
-  property=document.getElementById(btn3);
-  property.style.border ="none";
-  property=document.getElementById(btn4);
-  property.style.border ="none";
-
-}
   </script>
-   
-<h1>Please select driving license category:</h1>
-<div class="Diviziuni">
-<button id="A" onclick="setColorA('A','B','C','D')">A, A1, A2, AM</button>
-<button id="B" onclick="setColorA('B','A','C','D')">B, B1, C, C1</button>
-<button id="C" onclick="setColorA('C','A','B','D')">D, D1, Tb, Tv</button>
-<button id="D" onclick="setColorA('D','B','C','A')">Tr</button>
-</div>
-<div>
-<button class="buton" onclick="document.location='pagina_test-en.html'">Start test</button>
-<button class="buton" onclick="document.location='navbar-en.html'">Back to first page</button>
-</div>
 
-<footer class="homeF">Good bye!</footer>
+<div style="float: left;display: block;"><p style="font-size: medium;">Timp ramas: 00:00</p>
+<br>
+<p style="font-size: medium;">Correct answers:</p>
+<br>
+<p style="font-size: medium;">Wrong answers:</p>
 
+</div>
+<br><br><br><br><br><br><br><br>
+<p class="asd">Sorry but you failed the test!</p>​
+<br><br><br><br>
+ <div class="cbd">
+  <button class="cb" onclick="document.location='catergorii-en.html'">Start a new test!</button>
+</div>
+  
+<footer class="norisF">Good bye!</footer>
 </body>
 </html>

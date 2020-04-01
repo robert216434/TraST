@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Driving license categories</title>
-<link rel="stylesheet" href="pagina_test.css">
+<link rel="stylesheet" href="paginatest.css">
 <link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,6 +45,51 @@
     x.className = "topnav";
     }
   }
+
+function showButton() {
+  var obj = document.getElementById('backButton');
+  var asd = document.getElementById('mytext');
+
+    setTimeout(function() {
+      obj.style.display = 'block';
+    }, 5000);
+
+    setTimeout(function() {
+      asd.style.display = 'block';
+    }, 5000);
+
+}
+
+  function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (timer > 0) {
+            timer--;
+        }
+    }, 1000);
+
+     
+setTimeout( function () { alert( "Time is up!" ); window.location.href="pagina_dupa_testAng-en.html"; }, 5000 );
+}
+
+
+
+window.onload = function () {
+
+    var starttime = 3;
+    display = document.querySelector('#time');
+    startTimer(starttime, display);
+showButton();
+}
+
 </script>
 
 <div style="float: left;display: block;"><p style="font-size: medium;">Time left:</p>

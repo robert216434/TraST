@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Categorii de permise</title>
-<link rel="stylesheet" href="pagina_test.css">
+<link rel="stylesheet" href="paginatest.css">
 <link rel="stylesheet" href="butoane.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -45,9 +45,55 @@
     x.className = "topnav";
     }
   }
+
+  function showButton() {
+  var obj = document.getElementById('backButton');
+  var asd = document.getElementById('mytext');
+
+    setTimeout(function() {
+      obj.style.display = 'block';
+    }, 5000);
+
+    setTimeout(function() {
+      asd.style.display = 'block';
+    }, 5000);
+
+}
+
+  function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (timer > 0) {
+            timer--;
+        }
+    }, 1000);
+
+     
+setTimeout( function () { alert( "Timpul a expirat!" ); window.location.href="pagina_dupa_test.html"; }, 5000 );
+}
+
+
+
+window.onload = function () {
+
+    var starttime = 3;
+    display = document.querySelector('#time');
+    startTimer(starttime, display);
+showButton();
+}
   </script>
 
-<div style="float: left;display: block;"><p style="font-size: medium;">Timp ramas:</p>
+<div style="float: left;display: block;"><p style="font-size: medium;">Timp ramas: <span id="time">00:03</span></p>
+
+
 	<br>
 <p style="font-size: medium;">Raspunsuri corecte:</p>
 <br>
@@ -58,7 +104,10 @@
 
 <h1>*Intrebare*</h1>
 	<img src="imagini/frog.jpg" alt="Poza" width="300" height="300" >
-	
+	<br>
+<button id="backButton" style="display: none; text-align: center;">Mergi la pagina cu teste</button>​
+<p id="mytext" style="display: none; text-align: center;">Ai picat vtm</p>​
+
 	<h2>Variante de raspuns:</h2>
 	
 
@@ -77,6 +126,7 @@
 	<button class="Confirma" onclick="document.location='pagina_test.html'">Inapoi</button>
 	<button class="Confirma" onclick="document.location='catergorii.html'">Paraseste testul</button>
 </div>
+
 <footer>Good bye!</footer>
 </body>
 </html>
