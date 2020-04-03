@@ -12,29 +12,29 @@
 <body>
 
 <header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
-    
+  
   </header>
-<div class="topnav" id="myTopnav">
-  <a href="navbarAngl-en.html">Home</a>
-  <a href="loginAng-en.html">Authentification</a>
-  <div class="dropdown">
-    <button class="dropbtn">Select country
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar-en.html">Romania</a>
-    <a href="navbarAngl-en.html">England</a>
-    <a href="#">Another one</a>
+  <div class="topnav" id="myTopnav">
+    <a onclick="document.location='navbarAngl-en.html'">Home</a>
+    <a onclick="document.location='loginAng-en.html'">Authentification</a>
+    <div class="dropdown">
+      <button class="dropbtn">Select country
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+      <a onclick="document.location='navbar-en.html'">Romania</a>
+      <a onclick="document.location='navbarAngl-en.html'">England</a>
+      <a onclick="document.location='#'">Inca una</a>
+      </div>
     </div>
-  </div>
-  <a href="leg/legislatie3-en.html">Legislation</a>
-  <a href="semne_de_circulatieAng-en.html">Road signs</a>
-  <a href="catergoriiAng-en.html">Tests</a>
-  <a href="ClasamentAng-en.html">Ranking</a>
-  <a href="profilAng-en.html">Profile</a>
-  <a href="profilAng.html">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
+    <a onclick="document.location='leg/legislatie3-en.html'">Legislation</a>
+    <a onclick="document.location='semne_de_circulatieAng-en.html'">Road signs</a>
+    <a onclick="document.location='catergoriiAng-en.html'">Tests</a>
+    <a onclick="document.location='ClasamentAng-en.html'">Ranking</a>
+    <a onclick="document.location='profilAng-en.html'">Profile</a>
+    <a onclick="document.location='ClasamentAng.html'">Romana</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
 
   <script>
   function myFunction() {
@@ -89,7 +89,19 @@ window.onload = function () {
     startTimer(starttime, display);
 showButton();
 }
+function setColorA(btn){
+  property=document.getElementById(btn);
+  property.style.border = "2px solid red";
+}
 
+function undoAll(btn1,btn2,btn3){
+  property=document.getElementById(btn1);
+  property.style.border = "none";
+  property=document.getElementById(btn2);
+  property.style.border ="none";
+  property=document.getElementById(btn3);
+  property.style.border ="none";
+}
 </script>
 
 <div style="float: left;display: block;"><p style="font-size: medium;">Time left:</p>
@@ -104,17 +116,10 @@ showButton();
 <h1>*Question*</h1>
 	<img src="imagini/frog.jpg" alt="Poza" width="300" height="300" >	
 	<h2>Answers options:</h2>
-	
-
-	
-	<button id="pA">answer A</button>
-	<br>
-
-	
-	<button id="pB">answer B</button>
-    <br>
-
-	<button id="pC">answer C</button>
+<button id="pA" onclick="setColorA('pA')">A</button>
+<button id="pB" onclick="setColorA('pB')">B</button>
+<button id="pC" onclick="setColorA('pC')">C</button>
+<button id="pC" onclick="undoAll('pA','pB','pC')">Undo</button>
 	<br>
 	<div class="divziune1">
 	<button class="Confirma" onclick="document.location='pagina_testAng-en.html'">Confirm answers</button>

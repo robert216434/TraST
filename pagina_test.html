@@ -12,29 +12,29 @@
 <body>
 
  <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
-    
-  </header>
-<div class="topnav" id="myTopnav">
-  <a href="navbar.html">Acasa</a>
-  <a href="login.html">Autentificare</a>
-  <div class="dropdown">
-    <button class="dropbtn">Selecteaza tara
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar.html">Romania</a>
-    <a href="navbarAngl.html">Anglia</a>
-    <a href="#">Inca una</a>
-    </div>
-  </div>
-  <a href="leg/legislatie.html">Legislatie</a>
-  <a href="semne_de_circulatie.html">Semne de circulatie</a>
-  <a href="catergorii.html">Teste</a>
-  <a href="Clasament.html">Clasament</a>
-  <a href="profil.html">Profil</a>
-  <a href="profil-en.html">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
+	
+	</header>
+	<div class="topnav" id="myTopnav">
+		<a onclick="document.location='navbar.html'">Acasa</a>
+		<a onclick="document.location='login.html'">Autentificare</a>
+		<div class="dropdown">
+			<button class="dropbtn">Selecteaza tara
+			<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="dropdown-content">
+			<a onclick="document.location='navbar.html'">Romania</a>
+			<a onclick="document.location='navbarAngl'">Anglia</a>
+			<a onclick="document.location='#'">Inca una</a>
+			</div>
+		</div>
+		<a onclick="document.location='leg/legislatie.html'">Legislatie</a>
+		<a onclick="document.location='semne_de_circulatie.html'">Semne de circulatie</a>
+		<a onclick="document.location='catergorii.html'">Teste</a>
+		<a onclick="document.location='Clasament.html'">Clasament</a>
+		<a onclick="document.location='profil.html'">Profil</a>
+		<a onclick="document.location='Clasament-en.html'">English</a>
+		<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+		</div>
 
   <script>
   function myFunction() {
@@ -89,7 +89,23 @@ window.onload = function () {
     startTimer(starttime, display);
 showButton();
 }
+
+
+function setColorA(btn){
+  property=document.getElementById(btn);
+  property.style.border = "2px solid red";
+}
+
+function undoAll(btn1,btn2,btn3){
+  property=document.getElementById(btn1);
+  property.style.border = "none";
+  property=document.getElementById(btn2);
+  property.style.border ="none";
+  property=document.getElementById(btn3);
+  property.style.border ="none";
+}
   </script>
+
 
 <div style="float: left;display: block;"><p style="font-size: medium;">Timp ramas: <span id="time">00:03</span></p>
 
@@ -105,27 +121,25 @@ showButton();
 <h1>*Intrebare*</h1>
 	<img src="imagini/frog.jpg" alt="Poza" width="300" height="300" >
 	<br>
-<button id="backButton" style="display: none; text-align: center;">Mergi la pagina cu teste</button>​
-<p id="mytext" style="display: none; text-align: center;">Ai picat vtm</p>​
 
 	<h2>Variante de raspuns:</h2>
-	
+<button id="pA" onclick="setColorA('pA')">A</button>
+<button id="pB" onclick="setColorA('pB')">B</button>
+<button id="pC" onclick="setColorA('pC')">C</button>
+<button id="pC" onclick="undoAll('pA','pB','pC')">Anuleaza raspunsurile</button>
+
+
 
 	
-	<button id="pA">raspuns A</button>
-	<br>
-
-	
-	<button id="pB">raspuns B</button>
-    <br>
-
-	<button id="pC">raspuns C</button>
-	<br>
 	<div class="divziune1">
 	<button class="Confirma" onclick="document.location='pagina_test.html'">Confirma Raspunsurile</button>
 	<button class="Confirma" onclick="document.location='pagina_test.html'">Inapoi</button>
 	<button class="Confirma" onclick="document.location='catergorii.html'">Paraseste testul</button>
 </div>
+
+
+
+
 
 <footer>Good bye!</footer>
 </body>
