@@ -1,0 +1,58 @@
+body {
+
+  border: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:0;
+    height:100%;
+    
+    position: relative;
+  }
+
+  .container1{
+ margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  }
+
+  .NBQ{
+    margin-top: 50px;
+overflow: hidden;
+ display: flex;
+ flex-direction: row;
+ align-self: center;
+  }
+
+ .NBQ button{
+
+  display: inline-block;
+  line-height: 50px; 
+  background-color: #333;
+  font-weight: bold;
+  color:white;
+  width: 200px;
+  height: 100px;
+
+  
+
+ } 
+
+ .NBQ button:hover{
+
+  background-color: #555;
+  color: white;
+
+ }
+
+ .error{
+
+background-color: red;
+align-self: center;
+
+color: white;
+
+ }
