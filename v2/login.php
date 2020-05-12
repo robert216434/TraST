@@ -1,15 +1,15 @@
 <?php
-if(isset($_SESSION['login_user'])){
-    header('navbarAngl-en.html');
-    die();
+if(!isset($_SESSION)){
+	session_start();
 }
-else session_start();
+else header("location: navbar.html");
 ?>
+
 <!doctype html>
 <html lang="ro">
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Login</title>
     <link rel="stylesheet" href="login.css">
 	<link rel="stylesheet" href="butoane.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">

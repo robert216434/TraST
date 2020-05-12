@@ -2,7 +2,8 @@
    include('config.php');
    if(!isset($_SESSION)) { 
     session_start();
-}
+    $_SESSION['logat']=1;
+   }
    
    $user_check = $_SESSION['login_user'];
    

@@ -1,16 +1,17 @@
 <?php
-if(isset($_SESSION['login_user'])){
-    header('navbarAngl-en.html');
-    die();
+if(!isset($_SESSION)){
+	session_start();
 }
-else session_start();
+if($_SESSION['logat']==1){
+    header("location: navbarAngl-en.html");
+}
 ?>
 
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Login</title>
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="butoane.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +56,6 @@ else session_start();
 
 <?php
 	include("config.php");
-	
 
 	$loginErr = "";
 

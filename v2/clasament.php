@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ro">
 <head>
 <meta charset="utf-8">
@@ -33,6 +33,7 @@
   <a href="">English</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
+
 	
 		<script>
 		function myFunction() {
@@ -53,6 +54,7 @@
 ?>
 
 <div class = "clasament">
+	<a href="rss.php" class="button_rss" style="margin-left: 550px;">RSS feed users</a>
 	<h3>Top 10: </h3>
 	<table class = "clasament-item">
 		<tr>

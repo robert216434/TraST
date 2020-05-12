@@ -1,8 +1,8 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ro">
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Clasament</title>
 	<link rel="stylesheet" href="clasament.css">
 	<link rel="stylesheet" href="butoane.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +10,7 @@
 
 <body class="leg">
 
-	<header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
+	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
 	
 	</header>
 	<div class="topnav" id="myTopnav">
@@ -33,7 +33,7 @@
     <a href="">Romana</a>
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-		
+
 		<script>
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
@@ -46,19 +46,20 @@
 		</script>
 
 <?php 
-	include("sessions-en.php");
+	include("sessions.php");
 	$user = $_SESSION['login_user'];
 
 	$result = mysqli_query($db,"SELECT * FROM user ORDER BY punctaj DESC LIMIT 10");
 ?>
 
 <div class = "clasament">
+	<a href="rss.php" class="button_rss" style="margin-left: 550px;">RSS feed users</a>
 	<h3>Top 10: </h3>
 	<table class = "clasament-item">
 		<tr>
-			<th>Place</th>
+			<th>Loc</th>
 			<th>Username</th>
-			<th>Score</th>
+			<th>Punctaj</th>
 		</tr>
 		<?php $i=1; while($row = mysqli_fetch_array($result)): ?>
 		<tr>
