@@ -122,6 +122,7 @@
     if($eroare!=1){
         $sql = "INSERT INTO user VALUES ('$username','$password',0,0,'$name','$localitate','$email','$datanasterii','$telefon',CURRENT_DATE,CURRENT_DATE)";
         $result = mysqli_query($db,$sql);
+        header("location: login.php");
     }
     }
     ?>

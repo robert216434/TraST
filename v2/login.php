@@ -1,10 +1,3 @@
-<?php
-if(!isset($_SESSION)){
-	session_start();
-}
-else header("location: navbar.html");
-?>
-
 <!doctype html>
 <html lang="ro">
 <head>
@@ -54,6 +47,13 @@ else header("location: navbar.html");
 
 	<?php
 	include("config.php");
+
+	if(!isset($_SESSION)){
+		session_start();
+	}
+	if(isset($_SESSION['login_user'])){
+		header("location: navbar.html");
+	}
 
 	$loginErr = "";
 
