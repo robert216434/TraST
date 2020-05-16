@@ -37,91 +37,230 @@
     $eroare = 0;
 
     if (empty($_POST["username"])) {
-        $usernameErr = "Username is required";
+        $usernameErr = "username required";
         $eroare = 1;
      }else {
-        $username = $_POST["username"];
+        $usernameUnChecked=$_POST["username"];
+        $username = mysqli_real_escape_string($db,$_POST["username"]);
+        $username=trim($username);
+        $username=stripslashes($username);
+        $username=htmlspecialchars($username);
+
+         if($usernameUnChecked!=$username)
+         {
+          $usernameErr="avoid special characters";
+          $eroare=1;
+
+         }
+
+
     }
      
     if (empty($_POST["email"])) {
-        $emailErr = "Email is required";
+        $emailErr = "email required";
         $eroare = 1;
     }else {
-        $email = $_POST["email"];
+        $emailUnchecked=$_POST["email"];
+        $email = mysqli_real_escape_string($db,$_POST["email"]);
+        $email=trim($email);
+        $email=stripslashes($email);
+        $email=htmlspecialchars($email);
+        
+      
+       
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $emailErr = "Invalid email format";
+            $emailErr = "invalid email format";
             $eroare = 1;
         }
+
+        if($email!=$emailUnchecked){
+            $eroare=1;
+            $emailErr="avoid special characters";
+ 
+ 
+         }
+
+
+
     }
 
     if (empty($_POST["password"])) {
-        $passwordErr = "Password is required";
+        $passwordErr = "password required";
         $eroare = 1;
      }else {
-        $password = $_POST["password"];
+        $passwordUn=$_POST["password"];
+        $password = mysqli_real_escape_string($db,$_POST["password"]);
+        $password=trim($password);
+        $password=stripslashes($password);
+        $password=htmlspecialchars($password);
+        if(strlen($password)<6) {
+
+         $passwordErr="the password is needed to have at least 6 characters";
+         $eroare=1;
+
+        }
+
+         if($passwordUn!=$password){
+            $passwordErr="avoid special characters";
+            $eroare=1;
+
+         }
+
     }
 
     if (empty($_POST["password1"])) {
-        $password1Err = "Rewriting password is required";
+        $password1Err = "rewrite your password";
         $eroare = 1;
-     }else {
-        $password1 = $_POST["password1"];
+     }else {$passwordUn1=$_POST["password1"];
+        $password1 = mysqli_real_escape_string($db,$_POST["password1"]);
+        $password1=trim($password1);
+        $password1=stripslashes($password1);
+        $password1=htmlspecialchars($password1);
+        if(strlen($password1)<6) {
+
+            $password1Err="the password is needed to have at least 6 characters";
+            $eroare=1;
+   
+           }
+
+           if($passwordUn1!=$password1){
+            $password1Err="avoid special characters";
+            $eroare=1;
+
+         }
     }
 
     if(!empty($_POST["password"]) && !empty($_POST["password1"])){
         if(strcmp($password,$password1)!=0){
-            $password1Err = "Passwords don't match";
+            $password1Err = "passwords don't match";
             $eroare = 1;
         }
     }
 
     if (empty($_POST["nume"])) {
-        $nameErr = "Birthdate is required";
+        $nameErr = "name required";
         $eroare = 1;
      }else {
-        $name = $_POST["nume"];
+         $nameUn=$_POST["nume"];
+        $name = mysqli_real_escape_string($db,$_POST["nume"]);
+        $name=trim($name);
+        $name=stripslashes($name);
+        $name=htmlspecialchars($name);
+        
+
+        if($nameUn!=$name){
+         $eroare=1;
+         $nameErr="avoid special characters";
+
+        }
+
+
     }
 
     if (empty($_POST["localitate"])) {
-        $localitateErr = "City is required";
+        $localitateErr = "city is required";
      }else {
-        $localitate = $_POST["localitate"];
+         $localitateUn=$_POST["localitate"];
+        $localitate = mysqli_real_escape_string($db,$_POST["localitate"]);
+        $localitate=trim($localitate);
+        $localitate=stripslashes($localitate);
+        $localitate=htmlspecialchars($localitate);
+        if($localitateUn!=$localitate){
+            $localitateErr="avoid special characters";
+            $eroare=1;
+
+
+        }
+
     }
     
     if (empty($_POST["datanasterii"])) {
-        $datanasteriiErr = "Birthdate is required";
+        $datanasteriiErr = "birthdate necessary";
      }else {
-        $datanasterii = $_POST["datanasterii"];
+         $datanasteriiUn=$_POST["datanasterii"];
+        $datanasterii = mysqli_real_escape_string($db,$_POST["datanasterii"]);
+        $datanasterii=trim($datanasterii);
+        $datanasterii=stripslashes($datanasterii);
+        $datanasterii=htmlspecialchars($datanasterii);
+        if($datanasterii!=$datanasteriiUn)
+        {
+         $datanasteriiErr="avoid special characters";
+         $eroare=1;
+
+        }
     }
 
     if (empty($_POST["telefon"])) {
-        $telefonErr = "Birthdate is required";
+        $telefonErr = "phone number required";
      }else {
-        $telefon = $_POST["telefon"];
-    }
+         $telefonUn=$_POST["telefon"];
+        $telefon = mysqli_real_escape_string($db,$_POST["telefon"]);
+        $telefon=trim($telefon);
+        $telefon=stripslashes($telefon);
+        $telefon=htmlspecialchars($telefon);
+        if($telefonUn!=$telefon)
+        {
+            $telefonErr="avoid special characters";
+            $eroare=1;
 
-    $sqlusername = "SELECT username FROM user WHERE username = '$username'";
-    $resultusername = mysqli_query($db,$sqlusername);
-    $countusername = mysqli_num_rows($resultusername);
-    if($countusername>0){
+
+        }
+        else{
+
+
+            for($i=0;$i<strlen($telefon);$i++)
+            if($telefon[$i]>'9' || $telefon[$i]<'0'){
+             $telefonErr="phone number invalid format";
+             $eroare=1;
+
+
+
+        }
+
+    }
+    $statement=$db->prepare("SELECT username FROM useri WHERE username = ?");
+    $statement->bind_param("s",$username);
+    $sqlusername = $statement->execute();
+    $statement->bind_result($result);
+    
+    $number = $statement->num_rows;
+    $statement->fetch();
+    $statement->close();
+    if($number>0){
         $usernameErr = "username already exists";
         $eroare = 1;
     }
-
-    $sqlemail = "SELECT username FROM user WHERE email = '$email'";
-    $resultemail = mysqli_query($db,$sqlemail);
-    $countmail = mysqli_num_rows($resultemail);
-    if($countmail>0){
+    $statement1=$db->prepare("SELECT username FROM useri WHERE email = ?");
+    $statement1->bind_param("s",$email);
+    $statement1->execute();
+    $statement1->bind_result($result1);
+    $number1=$statement1->num_rows;
+  
+    $statement1->fetch();
+   
+    $statement1->close();
+    if($result1!=""){
         $emailErr = "email already exists";
         $eroare = 1;
     }
+   
 
     //$sql = "INSERT INTO user VALUES ('$username','$password',0,0,'$name','$localitate','$email',CONVERT(datetime,'$datanasterii',101),'$telefon',CURRENT_DATE,CURRENT_DATE)";
     //if($usernameErr =""&& $nameErr =""&& $emailErr = ""&& $passwordErr =""&& $password1Err = ""&& $localitateErr =""&& $datanasteriiErr =""&& $telefonErr = ""){
     //if($usernameErr ="" && $nameErr ="" && $emailErr = "" && $passwordErr ="" && $password1Err = "" && $localitateErr ="" && $datanasteriiErr ="" && $telefonErr = ""){
     if($eroare!=1){
-        $sql = "INSERT INTO user VALUES ('$username','$password',0,0,'$name','$localitate','$email','$datanasterii','$telefon',CURRENT_DATE,CURRENT_DATE)";
-        $result = mysqli_query($db,$sql);
+        $legislatie = "0000000000";
+        $legislatieAnglia = "0000000000000";
+        $semne = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+        $semneAnglia = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
+        $statement2=$db->prepare("INSERT INTO user VALUES (?,?,0,0,?,?,?,?,?,CURRENT_DATE,CURRENT_DATE,'$legislatie','$legislatieAnglia','$semne','$semneAnglia')");
+        $statement2->bind_param("sssssss",$username, $password,$name,$localitate,$email,$datanasterii,$telefon);
+    
+        $statement2->execute();
+        $statement2->fetch();
+        $statement2->close();
+        header("location: loginAng-en.php");
+    
     }
     }
     ?>

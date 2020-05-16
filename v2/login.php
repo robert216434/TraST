@@ -63,20 +63,30 @@
 	$loginErr = "";
 	$myusername = mysqli_real_escape_string($db,$_POST['username']);
 	$mypassword = mysqli_real_escape_string($db,$_POST['password']);
+	$statement=$db->prepare("SELECT username FROM user WHERE username = ? and password=? ");
+    $statement->bind_param("ss",$myusername,$mypassword);
+  $statement->execute();
+  $statement->bind_result($result);
+  $okay=true;
+  while($statement->fetch())
+  {   
+
+  }
+   
+
+
 	
-	$sql = "SELECT username FROM user WHERE username = '$myusername' and password = '$mypassword'";
-	$result = mysqli_query($db,$sql);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-	$active = $row['active'];
 	
-	$count = mysqli_num_rows($result);
-		
-	if($count == 1) {
+	
+	
+	$statement->close();
+
+	if($result !="") {
 		$_SESSION['login_user'] = $myusername;
 		
 		header("location: navbar.html");
 	}else {
-		$loginErr = "Your username or password is invalid";
+		$loginErr = "Numele utilizatorului sau parola invalida";
 	}
 	}
 	?>

@@ -51,40 +51,98 @@
 	include("sessions-en.php");
 	$user = $_SESSION['login_user'];
 
-	$sqlpunctaj = mysqli_query($db,"SELECT punctaj FROM user WHERE username = '$user'");
-	$punctaj = mysqli_fetch_row($sqlpunctaj);
+	$statement=$db->prepare("SELECT punctaj FROM user WHERE username = ? ");
+    $statement->bind_param("s",$user);
+  $statement->execute();
+  $statement->bind_result($punctaj);
+  $okay=true;
+  while($statement->fetch())
+  {   
 
-	$sqlintrebari = mysqli_query($db,"SELECT intrebariparcurse FROM user WHERE username = '$user'");
-	$intrebari = mysqli_fetch_row($sqlintrebari);
+  }
+   $statement->close();
 
-	$sqlnume = mysqli_query($db,"SELECT nume FROM user WHERE username = '$user'");
-	$nume = mysqli_fetch_row($sqlnume);
+   $statement=$db->prepare("SELECT intrebariparcurse FROM user WHERE username = ? ");
+   $statement->bind_param("s",$user);
+ $statement->execute();
+ $statement->bind_result($intrebari);
+ $okay=true;
+ while($statement->fetch())
+ {   
 
-	$sqlemail = mysqli_query($db,"SELECT email FROM user WHERE username = '$user'");
-	$email = mysqli_fetch_row($sqlemail);
+ }
+  $statement->close();
+  $statement=$db->prepare("SELECT nume FROM user WHERE username = ? ");
+  $statement->bind_param("s",$user);
+$statement->execute();
+$statement->bind_result($nume);
+$okay=true;
+while($statement->fetch())
+{   
 
-	$sqllocalitate = mysqli_query($db,"SELECT localitate FROM user WHERE username = '$user'");
-	$localitate = mysqli_fetch_row($sqllocalitate);
+}
+ $statement->close();
 
-	$sqltelefon = mysqli_query($db,"SELECT telefon FROM user WHERE username = '$user'");
-	$telefon = mysqli_fetch_row($sqltelefon);
+ $statement=$db->prepare("SELECT email FROM user WHERE username = ? ");
+ $statement->bind_param("s",$user);
+$statement->execute();
+$statement->bind_result($email);
+$okay=true;
+while($statement->fetch())
+{   
 
-	$sqldatanasterii = mysqli_query($db,"SELECT datanasterii FROM user WHERE username = '$user'");
-	$datanasterii = mysqli_fetch_row($sqldatanasterii);
+}
+$statement->close();
+
+
+$statement=$db->prepare("SELECT localitate FROM user WHERE username = ? ");
+$statement->bind_param("s",$user);
+$statement->execute();
+$statement->bind_result($localitate);
+$okay=true;
+while($statement->fetch())
+{   
+
+}
+$statement->close();
+
+
+$statement=$db->prepare("SELECT telefon FROM user WHERE username = ? ");
+$statement->bind_param("s",$user);
+$statement->execute();
+$statement->bind_result($telefon);
+$okay=true;
+while($statement->fetch())
+{   
+
+}
+$statement->close();
+
+
+$statement=$db->prepare("SELECT datanasterii FROM user WHERE username = ? ");
+$statement->bind_param("s",$user);
+$statement->execute();
+$statement->bind_result($datanasterii);
+$okay=true;
+while($statement->fetch())
+{   
+
+}
+$statement->close();
 ?>
 
 <div class="profile">
 	<div class="person-information">
 		<img src="imagini/userExample.png" alt="profile_image" class="profile-image">
 		<h2 class="person-name"> <?php echo $user ?> </h2>
-		<h4 class="person-short-info ">Score: <?php print implode(", ", $punctaj); ?> </h4>
-		<h4 class="person-short-info ">Questions answered: <?php print implode(", ", $intrebari); ?> </h4>
+		<h4 class="person-short-info ">Score: <?php  echo $punctaj; ?> </h4>
+		<h4 class="person-short-info ">Questions answered: <?php echo $intrebari; ?> </h4>
 		<p class="person-details">
-				Name: <?php print implode(", ", $nume); ?> <br>
-				City: <?php print implode(", ", $localitate); ?> <br>
-				E-mail: <?php print implode(", ", $email); ?> <br>
-				Birth date: <?php print implode(", ", $datanasterii); ?> <br>
-				Phone number: <?php print implode(", ", $telefon); ?>
+				Name: <?php echo  $nume; ?> <br>
+				City: <?php echo $localitate; ?> <br>
+				E-mail: <?php echo $email; ?> <br>
+				Birth date: <?php echo $datanasterii; ?> <br>
+				Phone number: <?php echo $telefon; ?>
 		</p>
 	</div>
 </div>

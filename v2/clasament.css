@@ -2,8 +2,11 @@
 body{
   font-family: 'sans-serif';
   background-color: powderblue; 
-  color:white;
  
+}
+
+#eltab{
+  color:white;
 }
 
 .clasament{
@@ -37,6 +40,7 @@ body{
 .clasament-item td a{
   text-decoration: none;
   color: black;
+  
 }
 
 .clasament-item td a:hover{

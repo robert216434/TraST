@@ -11,7 +11,7 @@ if(!isset($_SESSION)) {
     //$_SESSION['raspunsuriCorecte'] = 0;
   }
   
-  if($_SESSION['raspunsuriCorecte'] + $_SESSION['raspunsuriGresite'] == 26){
+  if($_SESSION['raspunsuriCorecte'] + $_SESSION['raspunsuriGresite'] >= 26){
       echo 1;
     //header("aitrecut.php");
     //$_SESSION['raspunsuriGresite'] = 0;

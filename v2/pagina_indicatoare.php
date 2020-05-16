@@ -55,8 +55,8 @@ if(!isset($_SESSION))
     session_start(); 
 } 
 $cevaa=new signScrapperRo();
-$i=$_SESSION['i'];
-$cevaa->setCurrentTable($i);
+$j=$_SESSION['i'];
+$cevaa->setCurrentTable($j);
 $explicatii=$cevaa->getExplicationsArray();
 $refresh=false;
 $var=$_SESSION['var'];
@@ -72,7 +72,6 @@ for($i=1;$i<count($var);$i++)
   echo "</div>";
   $refresh=true;
  }
-
 
 if(isset($_POST["Back"]) and $_SERVER['REQUEST_METHOD'] == "POST")
 {
@@ -102,6 +101,166 @@ if(isset($_POST["Next"]) and $_SERVER['REQUEST_METHOD'] == "POST")
   echo "</div>";
   $refresh=true;
 }
+}
+
+if($j==1){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex-1] == '0'){
+    $string[$stringIndex-1] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==2){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+48] == '0'){
+    $string[$stringIndex+48] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==3){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+54] == '0'){
+    $string[$stringIndex+54] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==4){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+100] == '0'){
+    $string[$stringIndex+100] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==5){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+115] == '0'){
+    $string[$stringIndex+115] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==6){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+152] == '0'){
+    $string[$stringIndex+152] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==7){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+202] == '0'){
+    $string[$stringIndex+202] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
+}
+
+if($j==8){
+  include('config.php');
+  $user = $_SESSION['login_user'];
+  //echo "asd";
+  $result = mysqli_query($db,"SELECT semne FROM user WHERE username= '$user' ");
+  $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+  $string = $row['semne'];
+
+  $stringIndex = $_SESSION['index'];
+  if($string[$stringIndex+217] == '0'){
+    $string[$stringIndex+217] = '1';
+    $result = mysqli_query($db,"SELECT punctaj FROM user WHERE username= '$user' ");
+    $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+    $punctaj = $row['punctaj'];
+    $punctaj = $punctaj + 1;
+    $result = mysqli_query($db,"UPDATE user SET punctaj= '$punctaj' WHERE username= '$user' ");
+    $result = mysqli_query($db,"UPDATE user SET semne= '$string' WHERE username= '$user' ");
+  }
 }
 
 if($refresh==false){

@@ -10,7 +10,11 @@
 </head>
 
 <body>
+<?php
+error_reporting(0);
+ini_set('display_errors', 0);
 
+?>
 <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
 	
 	</header>

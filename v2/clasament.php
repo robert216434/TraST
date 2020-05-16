@@ -58,15 +58,15 @@
 	<h3>Top 10: </h3>
 	<table class = "clasament-item">
 		<tr>
-			<th>Loc</th>
-			<th>Username</th>
-			<th>Punctaj</th>
+			<th id='eltab'>Loc</th>
+			<th id='eltab'>Username</th>
+			<th id='eltab'>Punctaj</th>
 		</tr>
 		<?php $i=1; while($row = mysqli_fetch_array($result)): ?>
 		<tr>
-			<td><?php print $i; $i++;?></td>
-			<td><?php print $row[0];?></td>
-			<td><?php print $row[2];?></td>
+			<td id='eltab'><?php print $i; $i++;?></td>
+			<td id='eltab'><?php print $row[0];?></td>
+			<td id='eltab'><?php print $row[2];?></td>
 		</tr>
 	<?php endwhile; ?>
 	</table>

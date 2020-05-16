@@ -66,14 +66,26 @@ if($_SESSION['logat']==1){
 	$myusername = mysqli_real_escape_string($db,$_POST['username']);
 	$mypassword = mysqli_real_escape_string($db,$_POST['password']);
 	
-	$sql = "SELECT username FROM user WHERE username = '$myusername' and password = '$mypassword'";
-	$result = mysqli_query($db,$sql);
-	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-	$active = $row['active'];
+	$statement=$db->prepare("SELECT username FROM user WHERE username = ? and password=? ");
+    $statement->bind_param("ss",$myusername,$mypassword);
+  $statement->execute();
+  $statement->bind_result($result);
+  $okay=true;
+  while($statement->fetch())
+  {   
+
+  }
+   
+
+
 	
-	$count = mysqli_num_rows($result);
+	
+	
+	
+	$statement->close();
+
 		
-	if($count == 1) {
+	if($result !="") {
 		$_SESSION['login_user'] = $myusername;
 		
 		header("location: navbarAngl-en.html");
@@ -93,7 +105,7 @@ if($_SESSION['logat']==1){
 				<span class = "error"><?php echo $loginErr;?></span>
                 <input type="submit" onclick = "location.href='';" value="Submit" class="submit-button">
             </form>
-			<input type = "button" onclick = "location.href = 'register.php';" class="sign-up-button" value='Sign up'>
+			<input type = "button" onclick = "location.href = 'registerAng-en.php';" class="sign-up-button" value='Sign up'>
 	</div>
     
 <footer style="margin-top: 189px">
