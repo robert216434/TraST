@@ -1,0 +1,64 @@
+<div class="topnav" id="myTopnav">
+    <a href="navbarAngl-en.html">Home</a>
+    <a href="loginAng-en.php" id="vizibilitateAutentificare">Login</a>
+    <div class="dropdown">
+      <button class="dropbtn">Select country
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+      <a href="navbar.html">Romania</a>
+      <a href="navbarAngl-en.html">England</a>
+      </div>
+    </div>
+    <a href="legislatie2-en.php">Legislation</a>
+    <a href="semne_de_circulatieAng-en.php">Road signs</a>
+    <a href="clasamentAng-en.php">Ranking</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+  
+		<script>
+
+        var vhtp = new XMLHttpRequest();
+        vhtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                      var butonLogout = document.createElement("a");
+                      butonLogout.href = "logout.php";
+                      butonLogout.onclick = "logoutUser()";
+                      butonLogout.id = "vizibilitateLogout";
+                      butonLogout.innerHTML = "Logout";
+                      document.getElementById("myTopnav").insertBefore(butonLogout,document.getElementById("myTopnav").children[2]);
+                      var autentific = document.getElementById("vizibilitateAutentificare");
+                      autentific.parentNode.removeChild(autentific);
+
+                      var butonProfil = document.createElement("a");
+                      butonProfil.href = "profil.php";
+                      butonProfil.innerHTML = "Profile";
+                      document.getElementById("myTopnav").append(butonProfil);
+                }
+            }
+        };
+        vhtp.open("GET", "checkLogout.php", true);
+        vhtp.send();
+
+        function logoutUser(){
+            var phtp = new XMLHttpRequest();
+            phtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                    document.getElementById("logoutt").style.visibility = "visible";
+                }
+            }
+            };
+            phtp.open("GET", "logout.php", true);
+            phtp.send();
+        }
+		function myFunction() {
+			var x = document.getElementById("myTopnav");
+			if (x.className === "topnav") {
+			x.className += " responsive";
+			} else {
+			x.className = "topnav";
+			}
+		}
+		</script>

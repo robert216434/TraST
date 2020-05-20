@@ -1,0 +1,171 @@
+body {
+    
+    margin: 0;
+   
+  
+    }
+  .asd{
+      font-size: 300%;
+      font-weight: bold;
+      text-align: center; 
+  }
+      h1 {
+
+      font-size: 300%;
+      font-weight: bold;
+      text-align: center;
+      }
+
+    
+  .cbd {
+    text-align: center;
+}
+
+.cb {
+    font-size: 300%;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+  .Confirma:active
+  {
+
+    color: white;
+  }
+
+.Diviziuni button {
+  text-align: center;
+  
+vertical-align: middle;
+line-height: 10px; 
+font-size: 20px;
+font-weight: bold;
+background-color: royalblue;
+color: white;
+display: inline-block;
+width: 200px;
+border: 10px royalblue;
+padding: 30px;
+margin: 30px;
+}
+
+.Diviziuni button:hover {
+  color: powderblue;
+  background-color: #153969;
+}
+.Diviziuni button:active {
+  color:white;
+}
+
+.butoane
+{
+
+    overflow: hidden;
+   background-color: royalblue;
+    
+}
+
+.buton{
+/*float: center;*/
+background-color:royalblue;
+font-size: 16px;
+color: white;
+text-align: center;
+border: 0;
+padding:16px;
+text-decoration: none;
+cursor: pointer;
+
+
+}
+.buton:hover {background-color: #153969;
+color:powderblue;}
+
+.buton:active{color:white;}
+
+.butonLimba{
+  float: right;
+  background-color:royalblue;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  border: 0;
+  padding:16px;
+  text-decoration: none;
+  cursor: pointer;
+  
+  
+  }
+  .butonLimba:hover {background-color: #153969;
+  color:powderblue;}
+  
+  .butonLimba:active{color:white;}
+  
+.dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding:16px;
+    background-color: inherit;
+    
+    margin: 0;
+  }
+ .dropdown .dropbtn:hover {background-color: #153969;
+color: powderblue;}
+
+.dropdown .dropbtn:active {
+  color: white;}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: powderblue;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .butone {
+    display: inline-block;
+  line-height: 50px; 
+  font-size: 100%;
+  background-color: lightblue;
+  font-weight: bold;
+  width: 500px;
+  border: 10px solid darkblue;
+  padding: 30px;
+  margin: 20px;
+  }
+
+  @media screen and (max-width: 600px) {
+    img{
+        width:200px;
+        height:200px;
+    }
+  }
+
+
+ 
