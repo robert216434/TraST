@@ -2,38 +2,65 @@
 
 include("config.php");
 
-$username = $_REQUEST["usr"];
-$parola = $_REQUEST["par"];
-$email = $_REQUEST["ema"];
-$nume = $_REQUEST["num"];
-$localitate = $_REQUEST["lcl"];
-$datanasterii = $_REQUEST["dtn"];
-$telefon = $_REQUEST["tel"];
-$punctaj = $_REQUEST["pct"];
-$intrebariparcuse = $_REQUEST["itr"];
+$username = $_POST["usr"];
+$parola = $_POST["par"];
+$email = $_POST["ema"];
+$nume = $_POST["num"];
+$localitate = $_POST["lcl"];
+$datanasterii = $_POST["dtn"];
+$telefon = $_POST["tel"];
+$punctaj = $_POST["pct"];
+$intrebariparcuse = $_POST["itr"];
 
 $sql = "UPDATE user SET ";
-$sql .= "" . $username . "'";
 
-$sql .= ",";
-$sql .= "'" . $parola . "'";
+if($parola!=""){
+$sql .= "password='" . $parola . "'";
+}
 
-$sql .= ",";
-$sql .= "'" . $email . "'";
+if($punctaj!=""){
+    if($parola!="")
+        $sql .= ",";
+$sql .= "punctaj='" . $punctaj . "'";
+}
 
-$sql .= ",";
-$sql .= "'" . $nume . "'";
+if($intrebariparcuse!=""){
+    if($parola!="" || $punctaj!="")
+        $sql .= ",";
+$sql .= "intrebariparcuse='" . $intrebariparcuse . "'";
+}
 
-$sql .= ",";
-$sql .= "'" . $localitate . "'";
+if($nume!=""){
+    if($parola!="" || $punctaj!="" || $intrebariparcuse!="")
+        $sql .= ",";
+$sql .= "nume='" . $nume . "'";
+}
 
-$sql .= ",";
-$sql .= "'" . $datanasterii . "'";
+if($localitate!=""){
+    if($parola!="" || $punctaj!="" || $intrebariparcuse!="" || $nume!="")
+        $sql .= ",";
+$sql .= "localitate='" . $localitate . "'";
+}
 
-$sql .= ",";
-$sql .= "'" . $telefon . "'";
+if($email!=""){
+    if($parola!="" || $punctaj!="" || $intrebariparcuse!="" || $nume!="" || $localitate!="")
+        $sql .= ",";
+$sql .= "email='" . $email . "'";
+}
 
-$sql .= ")";
+if($datanasterii!=""){
+    if($parola!="" || $punctaj!="" || $intrebariparcuse!="" || $nume!="" || $localitate!="" || $email!="")
+        $sql .= ",";
+$sql .= "datanasterii='" . $datanasterii . "'";
+}
+
+if($telefon!=""){
+    if($parola!="" || $punctaj!="" || $intrebariparcuse!="" || $nume!="" || $localitate!="" || $email!="" || $telefon!="")
+        $sql .= ",";
+$sql .= "telefon='" . $telefon . "'";
+}
+
+$sql .= " WHERE username='" . $username . "'";
 echo $sql;
 $result = mysqli_query($db,$sql);
 

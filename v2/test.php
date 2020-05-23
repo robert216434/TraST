@@ -15,9 +15,9 @@
 <div style="float: left;display: block;"><p>Timp ramas: <span id="time">30:00</span></p>
 
 <br>
-<p > Raspunsuri corecte: <span id="raspunsuriCorecte"></span></p>
+<p> Raspunsuri corecte: <span id="raspunsuriCorecte"></span></p>
 <br>
-<p > Raspunsuri gresite: <span id="raspunsuriGresite"></span></p>
+<p> Raspunsuri gresite: <span id="raspunsuriGresite"></span></p>
 <br>
 <br>
 <div id="intrebare" class="center">
@@ -76,7 +76,7 @@ function myFunction() {
     x.className = "topnav";
     }
   }
-
+/*
   function showButton() {
   var obj = document.getElementById('backButton');
   var asd = document.getElementById('mytext');
@@ -88,8 +88,7 @@ function myFunction() {
     setTimeout(function() {
       asd.style.display = 'block';
     }, 5000);
-
-}
+  }*/
 
   function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
@@ -114,7 +113,7 @@ window.onload = function () {
     var starttime = 1800;
     display = document.querySelector('#time');
     startTimer(starttime, display);
-    showButton();
+    //showButton();
 }
 
 function setColorA(btn){
@@ -137,6 +136,7 @@ function loadIntrebare() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+
       document.getElementById("intrebare").innerHTML = this.responseText;
     }
   };
@@ -158,7 +158,7 @@ function verificaRaspunsuri() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            document.getElementById("afisareRaspuns").innerHTML = this.responseText;
+          document.getElementById("afisareRaspuns").innerHTML = this.responseText;
         }
     };
     xmlhttp.open("GET", "verificareRaspuns.php?verifRasp=" + variante, true);
@@ -185,7 +185,7 @@ function verificareCastig(){
 </script>
 
 <br>
-
+<span id="afisareRaspuns"></span>
 <div class="butoaneJos">
 <button id='pA' onclick="setColorA('pA');adunareRaspunsuri('pA');">A</button>
 <button id='pB' onclick="setColorA('pB');adunareRaspunsuri('pB');">B</button>

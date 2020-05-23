@@ -8,33 +8,46 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="leg">
+<body class="leg" onload="ceas(); setInterval('ceas()', 1000 )">
 
 	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
 	
-	</header>
-	<div class="topnav" id="myTopnav">
-  <a href="navbar.html">Acasa</a>
-  <a href="login.php">Autentificare</a>
-  <div class="dropdown">
-    <button class="dropbtn">Selecteaza tara
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar.html">Romania</a>
-    <a href="navbarAngl-en.html">Anglia</a>
-    </div>
-  </div>
-  <a href="legislatie1.php">Legislatie</a>
-  <a href="semne_de_circulatie.php">Semne de circulatie</a>
-  <a href="categorii.php">Teste</a>
-  <a href="clasament.php">Clasament</a>
-  <a href="profil.php">Profil</a>
-  <a href="">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-  
+	</header>  
+    <?php
+    include('barasus.html');
+    include('sessions.php');
+
+    if($_SESSION['login_user']!="admin")
+        header("location: navbar.html");
+
+    ?>
+
 		<script>
+
+        var vhtp = new XMLHttpRequest();
+        vhtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                    document.getElementById("logoutt").style.visibility = "visible";
+                }
+            }
+        };
+        vhtp.open("GET", "checkLogout.php", true);
+        vhtp.send();
+
+        function logoutUser(){
+            var phtp = new XMLHttpRequest();
+            phtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                    document.getElementById("logoutt").style.visibility = "visible";
+                }
+            }
+            };
+            phtp.open("GET", "logout.php", true);
+            phtp.send();
+        }
+
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
 			if (x.className === "topnav") {
@@ -127,35 +140,41 @@
         }
 
         function modifyUser(){
-            if(document.getElementById("usernama").value!="")
-                var usr = document.getElementById("usernama").value;
-            if(document.getElementById("parolee").value!="")
+            if(document.getElementById("usernama").value==""){
+                alert('nu ai scris username-ul');
+                return;
+            }
+            else var usr = document.getElementById("usernama").value;
+            //if(document.getElementById("parolee").value!="")
                 var par = document.getElementById("parolee").value;
-            if(document.getElementById("punctaje").value!="")
+            //if(document.getElementById("punctaje").value!="")
                 var pct = document.getElementById("punctaje").value;
-            if(document.getElementById("intrebarr").value!="")
+            //if(document.getElementById("intrebarr").value!="")
                 var itr = document.getElementById("intrebarr").value;
-            if(document.getElementById("numeprena").value!="")
+            //if(document.getElementById("numeprena").value!="")
                 var num = document.getElementById("numeprena").value;
-            if(document.getElementById("localita").value!="")
+            //if(document.getElementById("localita").value!="")
                 var lcl = document.getElementById("localita").value;
-            if(document.getElementById("emailado").value!="")
+            //if(document.getElementById("emailado").value!="")
                 var ema = document.getElementById("emailado").value;
-            if(document.getElementById("datanas").value!="")
+            //if(document.getElementById("datanas").value!="")
                 var dtn = document.getElementById("datanas").value;
-            if(document.getElementById("telefono").value!="")
+            //if(document.getElementById("telefono").value!="")
                 var tel = document.getElementById("telefono").value;
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("rezuser").innerHTML = this.responseText;
+                    document.getElementById("moduser").innerHTML = this.responseText;
                 }
             };
             //trebuie cu encode
             //encodeURI
-            //in createUSER decodeURI
-            xhttp.open("GET", "createUser.php?usr=" + usr + "&par=" + par + "&ema=" + ema + "&num=" + num + "&lcl=" + lcl + "&dtn=" + dtn + "&tel=" + tel + "&pct=" + pct + "&itr=" + itr, true);
-            xhttp.send();
+            //in createUSER base64_decode(urldecode($str));
+            //xhttp.open("GET", "modifyUser.php?usr=" + usr + "&par=" + par + "&ema=" + ema + "&num=" + num + "&lcl=" + lcl + "&dtn=" + dtn + "&tel=" + tel + "&pct=" + pct + "&itr=" + itr, true)
+            xhttp.open("POST","modifyUser.php",true);
+            xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhttp.send("usr=" + usr + "&par=" + par + "&ema=" + ema + "&num=" + num + "&lcl=" + lcl + "&dtn=" + dtn + "&tel=" + tel + "&pct=" + pct + "&itr=" + itr);
+            //xhttp.send();
         }
 </script>
 
@@ -187,7 +206,7 @@ Username: <input type="text" id="usertodelete">
 <span id="rezstergere"></span>
 
 <p>Modificare utilizator:</p>
-<form>
+<form action="javascript:modifyUser()">
 Username: <input type="text" id="usernama">
 Parola: <input type="password" id="parolee">
 Punctaj: <input type="text" id="punctaje">
@@ -199,6 +218,7 @@ Data nasterii: <input type="text" id="datanas">
 Telefon: <input type="text" id="telefono">
 <input type="submit" value="Submit">
 </form>
+<span id="moduser"></span>
 
 <p>Cautare utilizator: </p>
 <form>
@@ -206,10 +226,34 @@ Username: <input type="text" onkeyup="showHint(this.value)">
 </form>
 
 <span id="txtHint"></span>
+<script>
+function ceas ( )
+{
+  var timp= new Date ( );
 
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Data: "+ an+" / "+luni+" / "+data+" Ora: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
 
 <footer style="margin-top: 239px">
-	Good bye!</footer>
+    La revedere!</br>
+<span id="ceas"></span>
+
+</footer>
 </body>
 
 </html>

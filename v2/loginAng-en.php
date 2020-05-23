@@ -17,44 +17,14 @@ if($_SESSION['logat']==1){
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body onload="ceas(); setInterval('ceas()', 1000 )">
 
     <header style="margin:0px;background-image: url(imagini/Anglia.png);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
     </header>
-    <div class="topnav" id="myTopnav">
-    <a href="navbarAngl-en.html">Home</a>
-    <a href="loginAng-en.php">Authentification</a>
-    <div class="dropdown">
-      <button class="dropbtn">Select country
-      <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-      <a href="navbar.html">Romania</a>
-      <a href="navbarAngl-en.html">England</a>
-      </div>
-    </div>
-    <a href="legislatie2-en.php">Legislation</a>
-    <a href="semne_de_circulatieAng-en.php">Road signs</a>
-    <a href="categoriiAng-en.php">Tests</a>
-    <a href="clasamentAng-en.php">Ranking</a>
-    <a href="profilAng-en.php">Profile</a>
-    <a href="">Romana</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
-      
-        <script>
-        function myFunction() {
-          var x = document.getElementById("myTopnav");
-          if (x.className === "topnav") {
-          x.className += " responsive";
-          } else {
-          x.className = "topnav";
-          }
-        }
-        </script>
 
 <?php
+require_once('barasus-en.html');
 	include("config.php");
 
 	$loginErr = "";
@@ -88,7 +58,9 @@ if($_SESSION['logat']==1){
 	if($result !="") {
 		$_SESSION['login_user'] = $myusername;
 		
-		header("location: navbarAngl-en.html");
+		if($_SESSION['login_user']=="admin")
+            header("location: administrare.php");
+		else header("location: navbar.html");
 	}else {
 		$loginErr = "Your username or password is invalid";
 	}
@@ -107,9 +79,32 @@ if($_SESSION['logat']==1){
             </form>
 			<input type = "button" onclick = "location.href = 'registerAng-en.php';" class="sign-up-button" value='Sign up'>
 	</div>
-    
+    <script>
+
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Date: "+ an+" / "+luni+" / "+data+" Time: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
 <footer style="margin-top: 189px">
-	Good bye!
+    Good bye!</br>
+    <span id="ceas"></span>
 </footer>
 </body>
 

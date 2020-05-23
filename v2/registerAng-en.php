@@ -9,6 +9,11 @@
     <title>TraST</title>
 </head>
 <body>
+
+<?php
+  require_once('barasus.html');
+  ?>
+  
 <?php
 	include("config.php");
     //session_start();

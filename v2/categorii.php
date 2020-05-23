@@ -9,41 +9,18 @@
 
 </head>
 
-<body>
+<body onload="ceas(); setInterval('ceas()', 1000 )">
 	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
   
   </header>
-  <div class="topnav" id="myTopnav">
-  <a href="navbar.html">Acasa</a>
-  <a href="login.php">Autentificare</a>
-  <div class="dropdown">
-    <button class="dropbtn">Selecteaza tara
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar.html">Romania</a>
-    <a href="navbarAngl-en.html">Anglia</a>
-    </div>
-  </div>
-  <a href="legislatie1.php">Legislatie</a>
-  <a href="semne_de_circulatie.php">Semne de circulatie</a>
-  <a href="categorii.php">Teste</a>
-  <a href="clasament.php">Clasament</a>
-  <a href="profil.php">Profil</a>
-  <a href="">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-    <p id="txtHint">  </p>
-  <script>
+  <?php
+  require_once('sessions.php');
+  require_once('barasus.html');
+  ?>  
+		<script>
+
+        
   sessionStorage.setItem("refresh","0");
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-    x.className += " responsive";
-    } else {
-    x.className = "topnav";
-    }
-  }
 
 function setColorA(btn1,btn2,btn3,btn4,btn5){
   property=document.getElementById(btn1);
@@ -70,14 +47,6 @@ function selectareCategorie(indcat){
 }
 </script>
 
-
-<?php
-
-include("sessions.php");
-
-?>
-
-
 <h1>Va rugam selectati categoria de permis:</h1>
 <div class="Diviziuni">
 <button id="A" onclick="setColorA('A','B','C','D','E');selectareCategorie(0);">A, A1, A2, AM</button>
@@ -91,7 +60,38 @@ include("sessions.php");
 <button class="buton" onclick="document.location='navbar.html'">Inapoi la pagina principala</button>
 </div>
 
-<footer class="homeF">Good bye!</footer>
+
+
+<script>
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Data: "+ an+" / "+luni+" / "+data+" Ora: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
+
+
+
+
+<footer class="homeF">Good bye!</br>
+<span id="ceas"></span>
+
+</footer>
 
 </body>
 </html>

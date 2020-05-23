@@ -20,32 +20,34 @@ $users = '<?xml version="1.0" encoding="UTF-8" ?>';
 
 $users .= '<rss version="2.0">';
 
-$users .= '<channel>';
+$users .= '<canal>';
 
-$users .= '<username>Username</username>';
+$users .= '<numeuser>Nume utilizator</numeuser>';
 
 $users .= '<punctaj>Punctaj</punctaj>';
 
 
 foreach ($rows as $row) {
 
-    $users .= '<item>';
+    $users .= '<articol>';
 
-    $users .= '<username>'.$row['username'].'</username>';
+    $users .= '<numeuser>'.$row['username'].'</numeuser>';
 
     $users .= '<punctaj>'.$row['punctaj'].'</punctaj>';
 
 
-    $users .= '</item>';
+    $users .= '</articol>';
 
 }
 
-$users .= '</channel>';
+$users .= '</canal>';
 
 $users .= '</rss> '; 
 
+//afisare in format xml
 header('Content-Type: application/xml');
 
+//afisarea utilizatorilor din clasament
 echo $users;
 
 ?>

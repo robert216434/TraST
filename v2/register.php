@@ -177,17 +177,17 @@
     if (empty($_POST["datanasterii"])) {
         $datanasteriiErr = "Data nasterii este necesara";
      }else {
-         $datanasteriiUn=$_POST["datanasterii"];
+        $datanasteriiUn=$_POST["datanasterii"];
         $datanasterii = mysqli_real_escape_string($db,$_POST["datanasterii"]);
         $datanasterii=trim($datanasterii);
         $datanasterii=stripslashes($datanasterii);
         $datanasterii=htmlspecialchars($datanasterii);
-        if($datanasterii!=$datanasteriiUn)
-        {
-         $datanasteriiErr="Evitati caracterele speciale";
-         $eroare=1;
-
+        if($datanasterii!=$datanasteriiUn) {
+            $datanasteriiErr="Evitati caracterele speciale";
+            $eroare=1;
         }
+        if (!preg_match("/[1-2][0,9][0-9][0-9].[0,1][0-2].[0-3][0-9]/",$date))
+            $eroare=1;
     }
 
     if (empty($_POST["telefon"])) {

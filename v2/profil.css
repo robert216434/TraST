@@ -13,12 +13,13 @@ body{
   }
   
   .person-information{
-    text-align: left;
-    margin-left:20%;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .profile{
-    width: auto;
+    font-size: xx-large;
+    text-align:center;
     margin: 120px auto 120px;
     background-color: #ffffff;
     padding: 0px 20px 20px;
@@ -26,15 +27,27 @@ body{
     box-shadow: 0 2px 5px rgba(0,0,0,0.075);
   }
   
+  .person-short-info{
+    display:inline-block;
+    font-size: 24pt;
+    color: black;
+    border-bottom: 2px solid red;  
+    border-left: 20px solid red;
+    padding-left: 10px;
+  }
+
+  .textPersonInfo{
+    color: red;
+  }
+
   .person-name{
-    font-size: 32px;
-    margin-bottom: 15px;
+    font-size: 35px;
     color: #333;
   }
   
   .person-details{
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 23px;
+    line-height: 30px;
     margin-bottom: 20px;
     color: #666;
   }
@@ -46,10 +59,13 @@ body{
     
     .person-name,.person-information{
       text-align:center;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .profile-image{
       display: block;
+      padding: auto;
       margin-left: auto;
       margin-right: auto;
     }

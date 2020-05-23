@@ -9,41 +9,16 @@
 
 </head>
 
-<body>
+<body  onload="ceas(); setInterval('ceas()', 1000 )">
 	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
   
   </header>
-  <div class="topnav" id="myTopnav">
-    <a href="navbarAngl-en.html">Home</a>
-    <a href="loginAng-en.php">Authentification</a>
-    <div class="dropdown">
-      <button class="dropbtn">Select country
-      <i class="fa fa-caret-down"></i>
-      </button>
-      <div class="dropdown-content">
-      <a href="navbar.html">Romania</a>
-      <a href="navbarAngl-en.html">England</a>
-      </div>
-    </div>
-    <a href="legislatie2-en.php">Legislation</a>
-    <a href="semne_de_circulatieAng-en.php">Road signs</a>
-    <a href="categoriiAng-en.php">Tests</a>
-    <a href="clasamentAng-en.php">Ranking</a>
-    <a href="profilAng-en.php">Profile</a>
-    <a href="">Romana</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-    </div>
-    <p id="txtHint">  </p>
-  <script>
+  <?php
+  require_once('barasus-en.html');
+  ?>
+		<script>
+
   sessionStorage.setItem("refresh","0");
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-    x.className += " responsive";
-    } else {
-    x.className = "topnav";
-    }
-  }
 
 function setColorA(btn1,btn2,btn3,btn4,btn5){
   property=document.getElementById(btn1);
@@ -90,8 +65,32 @@ include("sessions-en.php");
 <button class="buton" onclick="document.location='test.php'">Incepe testul</button>
 <button class="buton" onclick="document.location='navbar.html'">Inapoi la pagina principala</button>
 </div>
+<script>
 
-<footer class="homeF">Good bye!</footer>
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Date: "+ an+" / "+luni+" / "+data+" Time: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
+<footer class="homeF">Good bye!</br>
+<span id="ceas"></span>
+</footer>
 
 </body>
 </html>

@@ -8,42 +8,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body>
+<body onload="ceas(); setInterval('ceas()', 1000 )">
 
     <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
     
     </header>
-	<div class="topnav" id="myTopnav">
-  <a href="navbar.html">Acasa</a>
-  <a href="login.php">Autentificare</a>
-  <div class="dropdown">
-    <button class="dropbtn">Selecteaza tara
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar.html">Romania</a>
-    <a href="navbarAngl-en.html">Anglia</a>
-    </div>
-  </div>
-  <a href="legislatie1.php">Legislatie</a>
-  <a href="semne_de_circulatie.php">Semne de circulatie</a>
-  <a href="categorii.php">Teste</a>
-  <a href="clasament.php">Clasament</a>
-  <a href="profil.php">Profil</a>
-  <a href="">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-	
-	  <script>
-		function myFunction() {
-		  var x = document.getElementById("myTopnav");
-		  if (x.className === "topnav") {
-			x.className += " responsive";
-		  } else {
-			x.className = "topnav";
-		  }
-		}
-		</script>
+    <?php
+  require_once('barasus.html');
+  ?>
 
 <?php
 	include("sessions.php");
@@ -59,16 +31,6 @@
   }
    $statement->close();
 
-   $statement=$db->prepare("SELECT intrebariparcurse FROM user WHERE username = ? ");
-   $statement->bind_param("s",$user);
- $statement->execute();
- $statement->bind_result($intrebari);
- $okay=true;
- while($statement->fetch())
- {   
-
- }
-  $statement->close();
   $statement=$db->prepare("SELECT nume FROM user WHERE username = ? ");
   $statement->bind_param("s",$user);
 $statement->execute();
@@ -133,8 +95,7 @@ $statement->close();
 	<div class="person-information">
 		<img src="imagini/userExample.png" alt="profile_image" class="profile-image">
 		<h2 class="person-name"> <?php echo $user ?> </h2>
-		<h4 class="person-short-info ">Punctaj: <?php echo $punctaj; ?> </h4>
-		<h4 class="person-short-info ">Intrebari parcurse: <?php echo $intrebari; ?> </h4>
+    <h4 class="person-short-info">Punctaj: <span class="textPersonInfo"> <?php echo $punctaj; ?> </span> </h4>
 		<p class="person-details">
 				Nume: <?php echo $nume; ?> <br>
 				Localitate: <?php echo $localitate?> <br>
@@ -145,6 +106,31 @@ $statement->close();
 	</div>
 </div>
 
-<footer>La revedere!</footer>
+<script>
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Data: "+ an+" / "+luni+" / "+data+" Ora: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
+
+<footer>La revedere!</br>
+<span id="ceas"></span>
+</footer>
 </body>
 </html>

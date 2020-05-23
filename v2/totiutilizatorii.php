@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="leg">
+<body class="leg" onload="ceas(); setInterval('ceas()', 1000 )">
 
 	<header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
 	
@@ -29,12 +29,35 @@
   <a href="categorii.php">Teste</a>
   <a href="clasament.php">Clasament</a>
   <a href="profil.php">Profil</a>
-  <a href="">English</a>
+  <a href="logout.php" class="logout" id="logoutt" style="visibility: hidden;" onlick="logoutUser()">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
   </div>
-
-	
+  
 		<script>
+
+        var vhtp = new XMLHttpRequest();
+        vhtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                    document.getElementById("logoutt").style.visibility = "visible";
+                }
+            }
+        };
+        vhtp.open("GET", "checkLogout.php", true);
+        vhtp.send();
+
+        function logoutUser(){
+            var phtp = new XMLHttpRequest();
+            phtp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText=="1"){
+                    document.getElementById("logoutt").style.visibility = "visible";
+                }
+            }
+            };
+            phtp.open("GET", "logout.php", true);
+            phtp.send();
+        }
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
 			if (x.className === "topnav") {
@@ -83,8 +106,40 @@
 	</table>
 </div>
 
+
+<script>
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Data: "+ an+" / "+luni+" / "+data+" Ora: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
+
+
+
+
+
+
 <footer style="margin-top: 239px">
-	Good bye!</footer>
+    La revedere!</br>
+<span id="ceas"></span>
+</footer>
+    
 </body>
 
 </html>
