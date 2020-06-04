@@ -1,42 +1,55 @@
-
 body{
-  font-family: 'sans-serif';
-  background-color: powderblue; 
-  color:white;
- 
+  text-align: center;
+  margin: 0;
+  
+  
+}
+
+#eltab{
+  color:black;
 }
 
 .clasament{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   border-radius: 5px;
   position: relative;
   top: 25px;
   letter-spacing: 2px;
   padding: 10px 20px;
   margin: 7%;
+  font-size: 20px;
 }
 
 .clasament-item{
-  background-color: black;
+  background-color: yellow;
   border-collapse: collapse;
   width: 100%;
 }
 
 .clasament-item th, .clasament-item td{
-  text-align: left;
+  text-align: center;
   padding: 10px;
+  border: 3px solid black;
 }
 
 .clasament-item tr{
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
-.clasament-item tr:nth-child(even){
-  background-color: #333;
+.clasament-item tr:nth-child(3n+1){
+  background-color: darkred;
+}
+
+.clasament-item tr:nth-child(3n){
+  background-color: darkblue;
 }
 
 .clasament-item td a{
   text-decoration: none;
   color: black;
+  
 }
 
 .clasament-item td a:hover{
@@ -47,10 +60,66 @@ body{
   color: black;
 }
 
+.clasament-itemAng{
+  background-color: whitesmoke;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.clasament-itemAng th, .clasament-itemAng td{
+  text-align: center;
+  padding: 10px;
+  border: 3px solid black;
+}
+
+.clasament-itemAng tr{
+  border: 2px solid black;
+}
+
+.clasament-itemAng tr:nth-child(even){
+  background-color: darkred;
+}
+
+.clasament-itemAng td a{
+  text-decoration: none;
+  color: black;
+  
+}
+
+.clasament-itemAng td a:hover{
+  color: #bf8040;
+}
+
+.clasament-itemAng td a:active{
+  color: black;
+}
+
+.button_rss{
+  background-color: darkred;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50%;
+}
+
+.h3Top10{
+  display: inline-block;
+  font-size: 24pt;
+  font-family: "Arial";
+  color: black;
+  border-bottom: solid red;  
+  border-left: 20px solid red;
+  padding-left: 10px;
+}
+
 @media screen and (max-width: 940px){
   .clasament{
-  overflow-x:auto;
+    overflow-x:auto;
   }
+
 }
 
 

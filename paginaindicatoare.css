@@ -1,162 +1,98 @@
 body {
 
-  text-align: center;
-  margin: 0;
-  }
-
-  .div1 {
-  line-height: 50px; 
-  font-size: 200%;
-  font-weight: bold;
-  margin: 10px;
-  }
-
-  p {
-  font-size: 120%;
-  }
-
-img{
-
-  margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 30%;
-  }
-
- .nextSIbackSiquit button {
-    display: inline-block;
-  line-height: 50px; 
-  font-size:auto;
-  background-color: #333;
-  font-weight: bold;
- width: 200px;
- height: 100px;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  }
-  .nextSIbackSiquit button:hover{
-background-color: #555;
-color:white;
-
-
-  }
-  
-
-  .nextSIbackSiquit button:active{
-
-color: white;    
-  }
-
-.Diviziuni button {
-  text-align: center;
-  
-vertical-align: middle;
-line-height: 10px; 
-font-size: 20px;
-font-weight: bold;
-background-color: royalblue;
-color: white;
-display: inline-block;
-width: 200px;
-border: 10px royalblue;
-padding: 30px;
-margin: 30px;
-}
-.Diviziuni button:hover {
-  color: powderblue;
-  background-color: #153969;
-}
-.Diviziuni button:active {
-  color:white;
-}
-
-.butoane
-{
-
-    overflow: hidden;
-   background-color: royalblue;
-    
-}
-
-.buton{
-float: center;
-background-color:royalblue;
-font-size: 16px;
-color: white;
-text-align: center;
-border: 0;
-padding:16px;
-text-decoration: none;
-cursor: pointer;
-
-
-}
-.buton:hover {background-color: #153969;
-color:powderblue;}
-
-.buton:active{color:white;}
-
-.butonLimba{
-  float: right;
-  background-color:royalblue;
-  font-size: 16px;
-  color: white;
-  text-align: center;
   border: 0;
-  padding:16px;
-  text-decoration: none;
-  cursor: pointer;
-  
-  
-  }
-  .butonLimba:hover {background-color: #153969;
-  color:powderblue;}
-  
-  .butonLimba:active{color:white;}
-  
-.dropdown {
-    float: left;
-    overflow: hidden;
-  }
-  
-  .dropdown .dropbtn {
-    font-size: 16px;  
-    border: none;
-    outline: none;
-    color: white;
-    padding:16px;
-    background-color: inherit;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin:0;
+    height:100%;
     
-    margin: 0;
+    position: relative;
   }
- .dropdown .dropbtn:hover {background-color: #153969;
-color: powderblue;}
 
-.dropdown .dropbtn:active {
-  color: white;}
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: powderblue;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  .container1{
+ margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   }
+
+  .NBQ{
+    margin-top: 50px;
+overflow: hidden;
+ display: flex;
+ flex-direction: row;
+ align-self: center;
+ justify-content: space-evenly;
+ 
+  }
+
+ .NBQ button{
+
+  background-color: darkred;
+  color: black;
+  border-color: black;
+  display: inline-block;
+  border-radius: 50%;
+  outline: none;
+  width: 150px;
+  height: 150px;
+ 
+
   
-  .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #ddd;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+
+ } 
+
+
+
+ .NBQA{
+  margin-top: 50px;
+overflow: hidden;
+display: flex;
+flex-direction: row;
+align-self: center;
+justify-content: space-evenly;
+
+}
+
+.NBQA button{
+
+background-color: darkred;
+color: whitesmoke;
+border-color: whitesmoke;
+display: inline-block;
+border-radius: 50%;
+outline: none;
+width: 150px;
+height: 150px;
+
+
+
+
+} 
+
+
+
+ .error{
+
+background-color: red;
+align-self: center;
+
+color: white;
+
+ }
+
+ b{
+
+font-style: oblique;
+
+
+ }
+
+ p{
+
+
+  font-style: oblique;
+ }

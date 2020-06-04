@@ -1,0 +1,79 @@
+#testContent{
+    display: flex;
+   
+  flex-direction: column;
+  align-items: center;
+
+  }
+
+  .butoaneJos{
+    display: flex;
+    flex-direction: row;
+    
+    
+  }
+  
+  .butoaneJos button{
+    background: linear-gradient(to right,darkblue,darkred);
+    height: 50px;
+    color: white;
+    border-radius: 40%;
+    outline: none;
+    margin-left: 20px;
+  }
+  
+#intrebare{
+    max-width: 70%;
+    display: flex;
+   flex-direction: column;
+}
+
+.butonVarianta{
+  width: 40px;
+}
+
+img{
+width: 250px;
+height: 250px;
+border-radius: 30%;
+align-self: center;
+
+
+}
+
+
+  @media screen and (max-width: 600px) {
+    img{
+        width:200px;
+        height:200px;
+    }
+  }
+  
+
+ .timerCorectGresit
+ {
+font-family: 'Arial';
+font-style: oblique;
+font-weight: bolder;
+
+
+ } 
+  
+
+ .intrebareTest{
+   font-size: 16px;
+  align-self: center;
+
+  margin-top: 40px;
+
+ }
+
+ .varianteIntrebare{
+font-size: 14px;
+margin-top: 0px;
+align-self: flex-start;
+
+
+
+ }
+   

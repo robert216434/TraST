@@ -1,0 +1,68 @@
+body{
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+
+}
+
+.whiteColumn{
+
+
+    background-color: whitesmoke;
+}
+
+.redColumn{
+
+
+    background-color: darkred;
+}
+
+
+.yellowColumn{
+
+
+    background-color: yellow;
+}
+
+
+.blueColumn{
+
+
+    background-color: blue;
+}
+
+table, th, td {
+    border: 1px solid black;
+  }
+
+
+.CompareButtons{
+
+    display: inline-block;
+    background-color: darkred;
+    border-color: black;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border-radius: 50%;
+}
+
+.CompareButtonsAng{
+
+    display: inline-block;
+    background-color: darkred;
+    border-color: whitesmoke;
+    color: whitesmoke;
+    width: 100px;
+    height: 40px;
+    outline: none;
+    border-radius: 50%;
+}
+
+
+.CompareParagraphs{
+font-style: italic;
+
+
+}

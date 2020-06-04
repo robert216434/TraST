@@ -124,23 +124,34 @@ color: powderblue;}
   }
 
   .butone {
-    display: inline-block;
-  line-height: 50px; 
-  font-size: 100%;
-  background-color: #333;
-  font-weight: bold;
-  color:white;
-  width: 500px;
-  padding: 30px;
-  margin: 20px;
+    background-color: darkred;
+  border-color: black;
+
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  outline:none;
+  }
+  
+
+  .butone1 {
+    background-color: darkred;
+  border-color: whitesmoke;
+color: whitesmoke;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 50%;
+  outline:none;
   }
 
-  .butone:hover{
-    background-color: #555;
-    color: white;
-
-
-  }
 
 @media screen and (max-width: 600px) {
   .butone{
@@ -148,6 +159,19 @@ color: powderblue;}
     font-size: 16px;
     line-height: 20px;
   }
+  .butone1{
+    width: auto;
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
+.titlu{
+
+ font-style: oblique;
+
+
+
+
+}
  

@@ -1,7 +1,6 @@
 body{
     font-family: 'sans-serif';
     background-size: cover;
-    height: 100vh;
     padding:0;
     margin:0;
 }
@@ -37,8 +36,10 @@ body{
 }
   
 .submit-button {
-    background-color: #333;
+    width: 100%;
+    background:linear-gradient(to right,darkred,darkblue);
     border: 0px;
+    outline: none;
     color: white;
     padding: 12px 40px;
     text-align: center;
@@ -47,7 +48,24 @@ body{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius:3px;
+    border-radius:30%;
+}
+
+
+.submit-buttonAng {
+    width: 100%;
+    background:linear-gradient(to right,whitesmoke,darkred,whitesmoke);
+    border: 0px;
+    outline: none;
+    color: white;
+    padding: 12px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius:30%;
 }
 
 .submit-button:hover{
@@ -77,10 +95,9 @@ color: white;
 }
 
 .card{ 
-   position:fixed;
-   top:10%;
-   left:42%;
-   width:250px; 
+    margin: auto;
+    width: 20%;
+    padding: 10px;
 }
 
 .sign-up-button{

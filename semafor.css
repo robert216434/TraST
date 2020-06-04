@@ -1,0 +1,65 @@
+.semaforButtons{
+    background-color: #777;
+    border: none;
+    color: white;
+    padding: 18px;
+    
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+outline: none;
+border-radius: 50%;
+
+}
+
+#semafor{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    height: 120px;
+    width: 50px;
+    background-color: #333;
+    justify-content: space-evenly;
+    border-radius: 25%;
+  
+    
+
+}
+
+.stalp{
+margin-left: 15px;
+
+height: 50px;
+width: 20px;
+
+
+}
+
+
+.bazaStalp{
+
+    height: 20px;
+    width: 50px;
+   
+    
+    }
+
+
+    header{
+
+
+        display: flex;
+        justify-content: flex-end;
+        height: 200px;
+        
+        }
+        
+        .semaforComponente{
+        
+        
+          display: flex;
+          flex-direction:column;
+          margin-right: 10px;
+        }

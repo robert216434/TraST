@@ -3,52 +3,206 @@
 <head>
 <title>Home Page</title>
 <link rel="stylesheet" href="butoane.css">
+<link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="semafor.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
-<body class="leg">
+<body class="leg" onload="ceas(); setInterval('ceas()', 1000 )" >
 
-  <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;padding: 1cm;border: 0px;">
+  <header style="margin:0px;background-image: url(imagini/Romania.jpg);background-size: 100% 100%;border: 0px;">
+        <audio id="startingCar"  src="start.mp3"></audio> 
+        <audio id="stopingCar" src="brake.mp3"></audio>
+        <audio id="trafficQuarrel" src="horn.mp3"></audio>
+       
+    <script>
     
-  </header>
-<div class="topnav" id="myTopnav">
-  <a href="navbar.html">Acasa</a>
-  <a href="login.html">Autentificare</a>
-  <div class="dropdown">
-    <button class="dropbtn">Selecteaza tara
-    <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-    <a href="navbar.html">Romania</a>
-    <a href="navbarAngl.html">Anglia</a>
-    <a href="#">Inca una</a>
-    </div>
-  </div>
-  <a href="leg/legislatie.html">Legislatie</a>
-  <a href="semne_de_circulatie.html">Semne de circulatie</a>
-  <a href="catergorii.html">Teste</a>
-  <a href="Clasament.html">Clasament</a>
-  <a href="profil.html">Profil</a>
-  <a href="profil-en.html">English</a>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-  </div>
-
-  <script>
-  function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-    x.className += " responsive";
-    } else {
-    x.className = "topnav";
+     function playAudio(color) { if(color=="verde"){mp3Player = document.getElementById('startingCar');}
+    if(color=="galben")mp3Player = document.getElementById('stopingCar'); 
+    if(color=="rosu") mp3Player = document.getElementById('trafficQuarrel'); 
+    
+      mp3Player.play();
+    } 
+    
+    function setColorOfTrafficLight(buttonId)
+    {
+    if(buttonId=="verde"){
+    
+        document.getElementById("verde").style.backgroundColor="green";
+        document.getElementById("galben").style.backgroundColor="#777";
+        document.getElementById("rosu").style.backgroundColor="#777";
+    
     }
-  }
-  </script>
+    if(buttonId=="galben"){
+    
+    document.getElementById("galben").style.backgroundColor="yellow";
+    document.getElementById("verde").style.backgroundColor="#777";
+    document.getElementById("rosu").style.backgroundColor="#777";
+    
+    }
+    if(buttonId=="rosu"){
+    
+    document.getElementById("rosu").style.backgroundColor="red";
+    document.getElementById("galben").style.backgroundColor="#777";
+    document.getElementById("verde").style.backgroundColor="#777";
+    
+    }
+    
+    
+    }
+    
+    </script>
+    
 
-<p>Bine ati venit!</p>
-<footer class="homeF">Good bye!</footer>
+    <div class="semaforComponente">
+    
+    <span id="semafor">
+         <button class="semaforButtons"  id="rosu" onclick="setColorOfTrafficLight('rosu');playAudio('rosu')"></button>
+         <button class="semaforButtons" id="galben" onclick="setColorOfTrafficLight('galben');playAudio('galben')"></button>
+         <button class="semaforButtons"id="verde"  onclick="setColorOfTrafficLight('verde');playAudio('verde')"></button>
+    </span>
+    
+    <span class="stalp" style="background-color: gray;">
+    
+    </span>
+    
+    <span class="bazaStalp" style="background-color: gray;"></span>
+    
+    </div>  
+  
+  </header>
+  <div class="topnav" id="myTopnav">
+    <a href="navbar.html">Acasa</a>
+    <a href="login.php" id="vizibilitateAutentificare">Login</a>
+    <div class="dropdown">
+      <button class="dropbtn">Selecteaza tara
+      <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+      <a href="navbar.html">Romania</a>
+      <a href="navbarAngl-en.html">Anglia</a>
+      </div>
+    </div>
+    <a href="legislatie1.php">Legislatie</a>
+    <a href="semne_de_circulatie.php">Semne de circulatie</a>
+    <a href="categorii.php">Teste</a>
+    <a href="clasament.php">Clasament</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
+    
+          <script>
+  
+          var vhtp = new XMLHttpRequest();
+          vhtp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  if(this.responseText=="1"){
+                      var butonLogout = document.createElement("a");
+                      butonLogout.href = "logout.php";
+                      butonLogout.onclick = "logoutUser()";
+                      butonLogout.id = "vizibilitateLogout";
+                      butonLogout.innerHTML = "Logout";
+                      document.getElementById("myTopnav").insertBefore(butonLogout,document.getElementById("myTopnav").children[2]);
+                      var autentific = document.getElementById("vizibilitateAutentificare");
+                      autentific.parentNode.removeChild(autentific);
+
+                      var butonProfil = document.createElement("a");
+                      butonProfil.href = "profil.php";
+                      butonProfil.innerHTML = "Profil";
+                      document.getElementById("myTopnav").append(butonProfil);
+                  }
+              }
+          };
+          vhtp.open("GET", "checkLogout.php", true);
+          vhtp.send();
+  
+          function logoutUser(){
+              var phtp = new XMLHttpRequest();
+              phtp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                  if(this.responseText=="1"){
+                      //document.getElementById("logoutt").style.visibility = "visible";
+                  }
+              }
+              };
+              phtp.open("GET", "logout.php", true);
+              phtp.send();
+          }
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+      x.className += " responsive";
+      } else {
+      x.className = "topnav";
+      }
+    }
+    </script>
+
+<div class="backgroundImage" style="background-image: url('imagini/audi.jpg');">
+<h1 class="movingEffectRO"><u>Bine ati venit!</u></h1>
+
+<div class="divsectiune">
+  <h2 class="h2div">Introducere</h2>
+  <p class="pNavbar"> Bine ati venit pe pagina Acasa a site-ului TraSt! Aici veti invata regulile de circulatie in conformitate cu legislatia curenta a tarii a le carei reguli si semne de circulatie 
+  doriti sa le studiati.Pe aceasta pagina se vor afisa detalii legate de functionalitatea site-ului.</p>
+  </div>
+  
+  <div class="divsectiune">
+  <h2 class="h2div">Logare si inregistrare</h2>
+  <p class="pNavbar">Pentru a putea accesa faciliatile de teste,legislatie,semne de circulatie si profil ale acestui site va trebui mai intai sa va logati.
+  Nu stiti cum sa procedati?<br>
+  Este foarte simplu! In bara de navigatie a site-ului accesati butonul de "Autentificare".Odata ce ati intrat pe acea pagina ,tot ce trebuie sa faceti este sa va
+  scrieti numele si parola in campurile necesare.<br>
+  Nu aveti cont?<br>
+  Nicio problema! Odata intrati pe pagina de "Autentificare" ,in partea de jos a paginii aveti butonul de "Sign In", accesati-l pe acesta si veti fi directionat
+  pe o noua pagina in care veti avea de completat cateva campuri pentru a va crea un cont. </p>
+  </div>
+  
+  <div class="divsectiune">
+  <h2 class="h2div">Selecteaza tara , Legislatie si Semne de circulatie</h2>
+  <p class="pNavbar">Butonul de "Selecteaza tara" va permite sa selectati tara a carei reguli de circulatie doriti sa le studiati.(Atentie! Acest buton nu modifica si limba de comunicare a site-ului! Pentru 
+  aceasta facilitate aveti la dispozitie butonul de limba din capatul drept al barei de navigatie!)<br>
+  Pentru a accesa partea de invatare a regulilor de circulatie va trebui sa apasati butonul de "Legislatie" . Acolo va trebui sa alegeti categoria de permis pentru care doriti sa invatati 
+  regulile.(In general sunt aceleasi reguli, dar cu mici diferente!)<br>
+  Cand accesati pagina dedicata semnelor de circulatie, va trebui sa selectati o categorie de semne,iar apoi va trebui sa apasati pe poza semnului care prezinta interes pentru dvs. , acolo 
+  veti dispune de detalii legate de acel semn de circulatie.
+  </p>
+  </div>
+  
+  <div class="divsectiune">
+  <h2 class="h2div">Profil si Clasament</h2>
+  <p class="pNavbar">Mai intai de toate, pentru a vedea clasamentul, nu este nevoie sa fiti logat,dar pentru a accesa profilul dumneavoastra este de la sine evident ca este necesara logarea.
+  Legat de profilul dvs. , aici veti putea vedea detaliile legate de contul dumneavoastra de utilizator si detalii legate de testele pe care le-ati rezolvat,capitolele parcurse,categoriile de semne parcurse,etc.
+  </p>
+  </div>
 
 
+<script>
+function ceas ( )
+{
+  var timp= new Date ( );
+
+  var ore = timp.getHours ( );
+  var minute = timp.getMinutes ( );
+  var secunde = timp.getSeconds ( );
+
+if(minute<10) minute="0" + minute;
+if(secunde<10) secunde="0" + secunde;
+if(ore<10)ore="0"+ ore;
+  
+  var currentTimeString = ore + ":" + minute + ":" + secunde + " " ;
+var data=timp.getDate();
+var luni=timp.getMonth()+1;
+var an=timp.getFullYear();
+currentTimeString="Data: "+ an+" / "+luni+" / "+data+" Ora: "+currentTimeString;
+  document.getElementById("ceas").innerHTML = currentTimeString;
+}
+
+</script>
+
+<footer class="homeF">La revedere!.<br><span id="ceas"></span></footer>
+
+</div>
 </body>
 
 
