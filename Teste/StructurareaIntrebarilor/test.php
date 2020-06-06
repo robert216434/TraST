@@ -99,21 +99,6 @@
       }
     }
 
-    /*function showButton() {
-  var obj = document.getElementById('backButton');
-  var asd = document.getElementById('mytext');
-
-    setTimeout(function() {
-      obj.style.display = 'block';
-    }, 5000);
-
-    setTimeout(function() {
-      asd.style.display = 'block';
-    }, 5000);
-
-}
-*/
-
     function startTimer(duration, display) {
       var timer = duration,
         minutes, seconds;
@@ -203,7 +188,6 @@
           if (this.responseText == 2) {
             document.location = 'aipicat.php';
           }
-          document.getElementById("afisareCastigarree").innerHTML = this.responseText;
         }
       };
       xmlhttp.open("GET", "conditiiCastig.php", true);
@@ -212,7 +196,6 @@
   </script>
 
   <br>
-  <span id="afisareCastigarree"></span>
   <span id="afisareRaspuns"></span>
   <div class="butoaneJos">
     <button id='pA' onclick="setColorA('pA');adunareRaspunsuri('pA');">A</button>
