@@ -1,0 +1,90 @@
+body {
+  font-family: 'sans-serif';
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.eltab {
+  color: white;
+}
+
+.spanCautareUtilizator {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.clasament {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  position: relative;
+  flex-wrap: wrap;
+  font-size: 10px;
+}
+
+.clasament-item {
+  background-color: black;
+  border-collapse: collapse;
+}
+
+.clasament-item th, .clasament-item td {
+  text-align: center;
+  border: 3px solid white;
+  width: 100px;
+  height: 50px;
+  font-size: 12px;
+}
+
+.clasament-item tr {
+  border: 2px solid white;
+}
+
+.clasament-item tr:nth-child(even) {
+  background-color: #333;
+}
+
+.clasament-item td a {
+  text-decoration: none;
+  color: black;
+}
+
+.clasament-item td a:hover {
+  color: #bf8040;
+}
+
+.clasament-item td a:active {
+  color: black;
+}
+
+.operatiiAdministrare {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.formularAdministrare {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submitFormularAdministrare {
+  background-color: lightslategray;
+  border-radius: 20%;
+  width: 400px;
+}
+
+.inputFormularAdministrare {
+  height: 30px;
+  font-style: italic;
+}
+
+.operatiiAdministrare p {
+  font-weight: bolder;
+}

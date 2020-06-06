@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.container button {
+  flex-grow: 1;
+  background-color: whitesmoke;
+}
+
+.titluCapitol {
+  font-style: italic;
+  padding: 30px;
+  align-self: center;
+}

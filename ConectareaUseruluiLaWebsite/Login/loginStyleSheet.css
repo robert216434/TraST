@@ -1,0 +1,119 @@
+body {
+  font-family: 'sans-serif';
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.username {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.password {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background: linear-gradient(to right, darkblue, darkred);
+  border: 0px;
+  outline: none;
+  color: white;
+  padding: 12px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 30%;
+}
+
+.submit-buttonAng {
+  background: linear-gradient(to right, whitesmoke, darkred, whitesmoke);
+  border: 0px;
+  outline: none;
+  color: white;
+  padding: 12px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 150px;
+  border-radius: 30%;
+}
+
+#username-title {
+  color: black;
+}
+
+.form-text {
+  color: black;
+}
+
+#password-title {
+  color: black;
+}
+
+.card {
+  margin: auto;
+  width: 20%;
+  padding: 10px;
+}
+
+.sign-up-button {
+  background: linear-gradient(to right, darkblue, darkred);
+  border: 0px;
+  outline: none;
+  color: white;
+  padding: 12px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30%;
+  width: 150px;
+}
+
+.sign-up-buttonAng {
+  background: linear-gradient(to right, whitesmoke, darkred, whitesmoke);
+  border: 0px;
+  outline: none;
+  color: white;
+  padding: 12px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 30%;
+  width: 150px;
+}
+
+@media screen and (max-width: 940px) {
+  .card {
+    position: absolute;
+    margin: auto;
+    position: initial;
+    margin-top: 25%;
+    left: initial;
+    width: 250px;
+  }
+}

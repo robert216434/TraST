@@ -1,0 +1,71 @@
+body {
+  border: 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0;
+  height: 100%;
+  position: relative;
+}
+
+.container1 {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.NBQ {
+  margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-evenly;
+}
+
+.NBQ button {
+  background-color: darkred;
+  color: black;
+  border-color: black;
+  display: inline-block;
+  border-radius: 50%;
+  outline: none;
+  width: 150px;
+  height: 150px;
+}
+
+.NBQA {
+  margin-top: 50px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-evenly;
+}
+
+.NBQA button {
+  background-color: darkred;
+  color: whitesmoke;
+  border-color: whitesmoke;
+  display: inline-block;
+  border-radius: 50%;
+  outline: none;
+  width: 150px;
+  height: 150px;
+}
+
+.error {
+  background-color: red;
+  align-self: center;
+  color: white;
+}
+
+b {
+  font-style: oblique;
+}
+
+p {
+  font-style: oblique;
+}

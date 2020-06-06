@@ -1,0 +1,68 @@
+body {
+  border: none;
+  font-family: 'sans-serif';
+  text-decoration: none;
+  color: black;
+  margin: 0;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.person-information {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.profile {
+  font-size: xx-large;
+  text-align: center;
+  margin: 120px auto 120px;
+  padding: 0px 20px 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.075);
+}
+
+.person-short-info {
+  display: inline-block;
+  font-size: 24pt;
+  color: black;
+  border-bottom: 2px solid red;
+  border-left: 20px solid red;
+  padding-left: 10px;
+}
+
+.textPersonInfo {
+  color: red;
+}
+
+.person-name {
+  font-size: 35px;
+  color: #333;
+}
+
+.person-details {
+  font-size: 23px;
+  line-height: 30px;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+@media screen and (max-width: 940px) {
+  .profile {
+    width: 90%;
+  }
+  .person-name, .person-information {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .profile-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

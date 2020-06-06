@@ -1,0 +1,130 @@
+.content {
+	font-style: oblique;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.butoane1 {
+	overflow: hidden;
+	background-color: darkred;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-grow: 0;
+}
+
+.butoane1 button {
+	display: inline-block;
+	background-color: inherit;
+	border: none;
+	font-size: large;
+	-webkit-text-fill-color: whitesmoke;
+	-webkit-text-stroke-width: 0.7px;
+	-webkit-text-stroke-color: black;
+	height: 50px;
+}
+
+.butoane2 {
+	overflow: hidden;
+	background-color: darkred;
+	display: flex;
+	color: whitesmoke;
+	border: none;
+	flex-direction: row;
+	flex-wrap: wrap;
+	flex-grow: 0;
+}
+
+.butoane2 button {
+	display: inline-block;
+	background-color: inherit;
+	color: inherit;
+	height: 50px;
+	border: none;
+	font-size: large;
+}
+
+.continut {
+	font-style: oblique;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.articol {
+	margin: 30px;
+	padding: 30px;
+	font-family: 'Roboto';
+	font-size: 20px;
+	border-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient( to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+strong {
+	margin: 30px;
+	padding: 30px;
+	display: inline-block;
+	font-size: 24pt;
+	font-family: "Arial";
+	color: black;
+	border-bottom: 2px solid red;
+	border-left: 20px solid red;
+}
+
+p {
+	margin: 30px;
+	padding: 30px;
+	font-family: 'Roboto';
+	font-size: 20px;
+	border-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient( to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+h1 {
+	margin: 30px;
+	padding: 30px;
+	display: inline-block;
+	font-size: 24pt;
+	font-family: "Arial";
+	color: black;
+	border-bottom: 2px solid red;
+	border-left: 20px solid red;
+}
+
+h2 {
+	margin: 30px;
+	padding: 30px;
+	display: inline-block;
+	font-size: 20pt;
+	font-family: "Arial";
+	color: black;
+	border-bottom: 2px solid red;
+	border-left: 20px solid red;
+}
+
+h3 {
+	margin: 30px;
+	padding: 30px;
+	display: inline-block;
+	font-size: 20pt;
+	font-family: "Arial";
+	color: black;
+	border-bottom: 2px solid red;
+	border-left: 20px solid red;
+}
+
+ul {
+	margin: 30px;
+	padding: 30px;
+	font-family: 'Roboto';
+	font-size: 20px;
+	border-width: 3px;
+	border-style: solid;
+	border-image: linear-gradient( to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+li {
+	font-style: normal;
+	list-style-type: square;
+}

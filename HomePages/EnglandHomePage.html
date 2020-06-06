@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+  <link rel="stylesheet" href="../IncludedNavbars/navbarStyleSheet.css">
+  <link rel="stylesheet" href="homeStyleSheet.css">
+  <link rel="stylesheet" href="../IncludedNavbars/semaforStyleSheet.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body class="leg" onload="ceas(); setInterval('ceas()', 1000 )">
+  <header
+    style="margin:0px;background-image: url(../MediaContent/imagini/Anglia.png);background-size: 100% 100%;border: 0px;">
+    <audio id="startingCar" src="../MediaContent/suneteSemafor/start.mp3"></audio>
+    <audio id="stopingCar" src="../MediaContent/suneteSemafor/brake.mp3"></audio>
+    <audio id="trafficQuarrel" src="../MediaContent/suneteSemafor/horn.mp3"></audio>
+
+    <script>
+
+      function playAudio(color) {
+        if (color == "verde") { mp3Player = document.getElementById('startingCar'); }
+        if (color == "galben") mp3Player = document.getElementById('stopingCar');
+        if (color == "rosu") mp3Player = document.getElementById('trafficQuarrel');
+
+        mp3Player.play();
+      }
+
+      function setColorOfTrafficLight(buttonId) {
+        if (buttonId == "verde") {
+
+          document.getElementById("verde").style.backgroundColor = "green";
+          document.getElementById("galben").style.backgroundColor = "#777";
+          document.getElementById("rosu").style.backgroundColor = "#777";
+
+        }
+        if (buttonId == "galben") {
+
+          document.getElementById("galben").style.backgroundColor = "yellow";
+          document.getElementById("verde").style.backgroundColor = "#777";
+          document.getElementById("rosu").style.backgroundColor = "#777";
+
+        }
+        if (buttonId == "rosu") {
+
+          document.getElementById("rosu").style.backgroundColor = "red";
+          document.getElementById("galben").style.backgroundColor = "#777";
+          document.getElementById("verde").style.backgroundColor = "#777";
+
+        }
+
+
+      }
+
+    </script>
+
+
+    <div class="semaforComponente">
+
+      <span id="semafor">
+        <button class="semaforButtons" id="rosu" onclick="setColorOfTrafficLight('rosu');playAudio('rosu')"></button>
+        <button class="semaforButtons" id="galben"
+          onclick="setColorOfTrafficLight('galben');playAudio('galben')"></button>
+        <button class="semaforButtons" id="verde" onclick="setColorOfTrafficLight('verde');playAudio('verde')"></button>
+      </span>
+
+      <span class="stalp" style="background-color: gray;">
+
+      </span>
+
+      <span class="bazaStalp" style="background-color: gray;"></span>
+
+    </div>
+
+  </header>
+
+  <div class="topnav-en" id="myTopnav">
+
+    <a href="EnglandHomePage.html">Home</a>
+    <a href="../ConectareaUseruluiLaWebsite/Login/loginAnglia.php" id="vizibilitateAutentificare">Login</a>
+    <div class="dropdown-en">
+      <button class="dropbtn-en">Select country
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content-en">
+        <a href="RomaniaHomePage.html">Romania</a>
+        <a href="EnglandHomePage.html">England</a>
+      </div>
+    </div>
+    <a href="../SuportInvatare/PaginiLegislatii/legislatieAnglia.php">Legislation</a>
+    <a href="../SuportInvatare/SemneDeCirculatie/selectareaSemnelorAnglia.php">Road signs</a>
+    <a href="../StatisticiSiProfil/ClasamentTabel/clasamentAnglia.php">Ranking</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+
+  </div>
+
+  <script>
+
+    var vhtp = new XMLHttpRequest();
+    vhtp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        if (this.responseText == "1") {
+          var butonLogout = document.createElement("a");
+          butonLogout.href = "../ConectareaUseruluiLaWebsite/Logout/logoutAnglia.php";
+          butonLogout.onclick = "logoutUser()";
+          butonLogout.id = "vizibilitateLogout";
+          butonLogout.innerHTML = "Logout";
+          document.getElementById("myTopnav").insertBefore(butonLogout, document.getElementById("myTopnav").children[2]);
+          var autentific = document.getElementById("vizibilitateAutentificare");
+          autentific.parentNode.removeChild(autentific);
+
+          var butonProfil = document.createElement("a");
+          butonProfil.href = "../StatisticiSiProfil/Profil/profilAnglia.php";
+          butonProfil.innerHTML = "Profile";
+          document.getElementById("myTopnav").append(butonProfil);
+          checkAdministrator();
+        }
+      }
+    };
+    vhtp.open("GET", "../ConectareaUseruluiLaWebsite/Logout/checkLogout.php", true);
+    vhtp.send();
+
+
+    function checkAdministrator() {
+      var adminhtp = new XMLHttpRequest();
+      adminhtp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          if (this.responseText == "1") {
+            var butonAdministrare = document.createElement("a");
+            butonAdministrare.href = "../ModulAdministrare/Administrare/administrareAnglia.php";
+            butonAdministrare.id = "vizibilitateAdministrare";
+            butonAdministrare.innerHTML = "Administration";
+            document.getElementById("myTopnav").append(butonAdministrare);
+          }
+        }
+      };
+      adminhtp.open("GET", "../ModulAdministrare/Administrare/checkAdministrator.php", true);
+      adminhtp.send();
+
+    }
+
+
+    function logoutUser() {
+      var phtp = new XMLHttpRequest();
+      phtp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          if (this.responseText == "1") {
+            document.getElementById("logoutt").style.visibility = "visible";
+          }
+        }
+      };
+      phtp.open("GET", "../ConectareaUseruluiLaWebsite/Logout/logoutAnglia.php", true);
+      phtp.send();
+    }
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+  <div class="backgroundImage" style="background-image: url('../MediaContent/imagini/audi.jpg');">
+
+    <h1 class="movingEffectEN"><u>Welcome!</u></h1>
+
+    <div class="divsectiune">
+      <h2 class="h2div">Introduction</h2>
+      <p class="pNavbar"> Welcome to the Home page of TraSt site! Here you will learn
+        traffic circulation rules accorded to the current legislation of the country which you will choose to study. On
+        this page you cand see explications about this site's functionality.</p>
+    </div>
+
+    <div class="divsectiune">
+      <h2 class="h2div">Authentification and Register</h2>
+      <p class="pNavbar">To access this site's facilities ,like Profile,Legislation,Tests,Road signs you will have to be
+        logged in.
+        You don't know how to do it?<br>
+        It's very simple! In the navigation bar of the site you will have to access the "Authentification" button.When
+        you have entered that page ,all you have to do is to write your username and password in those fields.<br>
+        You don't have an account?<br>
+        No problem! When you are on the "Authentification" page ,on the bottom of the page you will have the "Sign In"
+        button, access it and you will be directed on a new page where you will have to write some informations about
+        you in some fields(basic information). </p>
+    </div>
+
+    <div class="divsectiune">
+      <h2 class="h2div">Select Country , Legislation and Road signs</h2>
+      <p class="pNavbar">The "Select country" button will let you select the country of which's rules you want to
+        study.(Atention! This button doesn't modify the language too! For this facility
+        you will have the language button at your disposal,located on the right side of the navigation bar!)<br>
+        To access the "Legislation" part you will have to choose firstly the category of the driver license you want to
+        study .<br>
+        When you access the "Road signs" page, you must select a sign category,then you will have to press on the image
+        of the sign which you are interested in , then you will be redirected on another page where you will have the
+        details about that sign.
+      </p>
+
+    </div>
+
+    <div class="divsectiune">
+      <h2 class="h2div">Profile and Ranking</h2>
+      <p class="pNavbar">Firstly, to see the rankings, it's not necessary to be logged in ,but it's quite obivous that
+        to see your profile you'll have to be logged in.
+        About your profile, there you can see details related to your person (user details) and details about how many
+        chapters you have read,or how many tests you passed,etc.
+      </p>
+    </div>
+
+    <script>
+
+      function ceas() {
+        var timp = new Date();
+
+        var ore = timp.getHours();
+        var minute = timp.getMinutes();
+        var secunde = timp.getSeconds();
+
+        if (minute < 10) minute = "0" + minute;
+        if (secunde < 10) secunde = "0" + secunde;
+        if (ore < 10) ore = "0" + ore;
+
+        var currentTimeString = ore + ":" + minute + ":" + secunde + " ";
+        var data = timp.getDate();
+        var luni = timp.getMonth() + 1;
+        var an = timp.getFullYear();
+        currentTimeString = "Date: " + an + " / " + luni + " / " + data + " Time: " + currentTimeString;
+        document.getElementById("ceas").innerHTML = currentTimeString;
+      }
+
+    </script>
+
+
+
+    <footer class="homeF-en">Good bye!<br> <span id="ceas"></span></footer>
+  </div>
+</body>
+
+
+</html>

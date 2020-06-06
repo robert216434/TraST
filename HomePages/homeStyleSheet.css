@@ -1,0 +1,77 @@
+body {
+  background: linear-gradient(to right, lightblue, lightyellow);
+}
+
+.flag {
+  margin: 0px;
+  background-size: 100% 100%;
+  padding: 1cm;
+  border: 0px;
+}
+
+.divsectiune {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.h1titlu {
+  display: inline-block;
+  text-align: center;
+  font-family: sans-serif;
+  margin-top: 50px;
+  border-bottom: 5px solid red;
+}
+
+.h2div {
+  display: inline-block;
+  font-size: 24pt;
+  font-family: "Arial";
+  color: black;
+  border-bottom: 2px solid red;
+  border-left: 20px solid red;
+  padding-left: 10px;
+}
+
+p {
+  margin: 30px;
+  padding: 30px;
+  font-family: 'Roboto';
+  font-size: 20px;
+  border-width: 3px;
+  border-style: solid;
+  border-image: linear-gradient( to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+}
+
+.movingEffectRO {
+  font-size: 80px;
+  color: black;
+  text-align: center;
+  animation: movingEffectRO 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes movingEffectRO {
+  from {
+    text-shadow: 0 0 10px navy;
+  }
+  to {
+    text-shadow: 0 0 30px darkred;
+  }
+}
+
+/*Anglia*/
+
+.movingEffectEN {
+  font-size: 80px;
+  color: black;
+  text-align: center;
+  animation: movingEffectEN 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes movingEffectEN {
+  from {
+    text-shadow: 0 0 10px red;
+  }
+  to {
+    text-shadow: 0 0 30px white, 0 0 40px darkred;
+  }
+}
