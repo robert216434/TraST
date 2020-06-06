@@ -5,6 +5,7 @@ error_reporting(0);
 ini_set('display_errors', 0);
 
 function dlPage($index) {
+    $_SESSION['categorieTestAleasa'] = $index;
     if($index==0){
         $url = "https://www.autoelev.ro/categoria-a.html";
     }
@@ -34,7 +35,6 @@ function dlPage($index) {
 if(!isset($_SESSION)) { 
     session_start();
 }
-
 
 $currentImg=null;
 $intrebare=null;
@@ -89,9 +89,9 @@ function get($index){
     $_SESSION['intrb']=$intrb[0]->innertext;
     $_SESSION['testIntrebareText']=$intrb[0]->find('text',0);
     
-    $_SESSION['raspA']=0;
-    $_SESSION['raspB']=0;
-    $_SESSION['raspC']=0;
+    $_SESSION['raspunsVariantaA']=0;
+    $_SESSION['raspunsVariantaB']=0;
+    $_SESSION['raspunsVariantaC']=0;
 
     $script = $html->find("script");
     echo $script[11];
@@ -100,19 +100,23 @@ function get($index){
     $functie = $script[11];
     if(strstr($functie,'raspunsulstr[1]!=1')){
         $variantaA = 1;
-        $_SESSION['raspA']=1;
+        $_SESSION['raspunsVariantaA']=1;
     }
     else $variantaA = 0;
     if(strstr($functie,'raspunsulstr[2]!=1')){
         $variantaB = 1;
-        $_SESSION['raspB']=1;
+        $_SESSION['raspunsVariantaB']=1;
     }
     else $variantaB = 0;
     if(strstr($functie,'raspunsulstr[3]!=1')){
         $variantaC = 1;
-        $_SESSION['raspC']=1;
+        $_SESSION['raspunsVariantaC']=1;
     }
     else $variantaC = 0;
+
+    echo $_SESSION['raspunsVariantaA'];
+    echo $_SESSION['raspunsVariantaB'];
+    echo $_SESSION['raspunsVariantaC'];
 }
 
 $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
@@ -141,6 +145,4 @@ if($_SESSION['raspunsuriCorecte']==0 && $_SESSION['raspunsuriGresite']==0){
     fclose($fp);
 }
 
-//$_SESSION['asd'] = new teste;
-//$_SESSION['asd']-> get();
 ?>

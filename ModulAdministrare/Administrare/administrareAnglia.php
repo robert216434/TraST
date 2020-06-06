@@ -16,9 +16,9 @@
     <?php
 
     include('../../ConectareaUseruluiLaWebsite/SesiuniSiConfig/sesiuniActiveAnglia.php');
-    include('../../IncludedNavbars/navbarAnglia.html');
     if ($_SESSION['login_user'] != "admin")
         header("location: ../../HomePages/EnglandHomePage.html");
+    include('../../IncludedNavbars/navbarAnglia.html');
 
     ?>
 

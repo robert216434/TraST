@@ -28,7 +28,8 @@
     //javascript
 
     //afisare intrebare reload pagina
-
+    
+    var variante = "";
     var afisat = 0;
     if (afisat == 0) {
       if (sessionStorage.getItem("refresh") != "0") {
@@ -155,6 +156,7 @@
       property.style = "default";
       property = document.getElementById(btn3);
       property.style = "default";
+      variante = "";
     }
 
     //ajax
@@ -169,7 +171,6 @@
       xhttp.open("GET", "intrebare.php", true);
       xhttp.send();
     }
-    var variante = "";
 
     function adunareRaspunsuri(str) {
       variante += str;
@@ -188,9 +189,8 @@
           document.getElementById("afisareRaspuns").innerHTML = this.responseText;
         }
       };
-      xmlhttp.open("GET", "verificareRaspuns.php?verifRasp=" + variante, true);
+      xmlhttp.open("GET", "verificareRaspuns.php?varianteAleseIntrebare=" + variante, true);
       xmlhttp.send();
-      variante = "";
     }
 
     function verificareCastig() {
@@ -203,6 +203,7 @@
           if (this.responseText == 2) {
             document.location = 'aipicat.php';
           }
+          document.getElementById("afisareCastigarree").innerHTML = this.responseText;
         }
       };
       xmlhttp.open("GET", "conditiiCastig.php", true);
@@ -211,7 +212,7 @@
   </script>
 
   <br>
-
+  <span id="afisareCastigarree"></span>
   <span id="afisareRaspuns"></span>
   <div class="butoaneJos">
     <button id='pA' onclick="setColorA('pA');adunareRaspunsuri('pA');">A</button>
@@ -219,7 +220,7 @@
     <button id='pC' onclick="setColorA('pC');adunareRaspunsuri('pC');">C</button>
     <button onclick="undoAll('pA','pB','pC');">Anuleaza raspunsurile</button>
 
-    <button onclick="undoAll('pA','pB','pC');verificaRaspunsuri();generareCSV();loadIntrebare();raspunsuriCorecte();raspunsuriGresite();verificareCastig();">Confirma Raspunsurile</button>
+    <button onclick="verificaRaspunsuri();generareCSV();raspunsuriCorecte();raspunsuriGresite();verificareCastig();undoAll('pA','pB','pC');loadIntrebare();">Confirma Raspunsurile</button>
     <button onclick="document.location='../../HomePages/RomaniaHomePage.html'">Paraseste testul</button>
   </div>
 

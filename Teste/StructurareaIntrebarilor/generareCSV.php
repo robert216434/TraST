@@ -5,7 +5,7 @@ $file1 = ob_get_contents();
 ob_clean();
 
 $list = array (
-    array($_SESSION['testIntrebareText']->innertext, $_SESSION['textVariantaA'], $_SESSION['textVariantaB'], $_SESSION['textVariantaC'] , $_SESSION['corect'])
+    array($_SESSION['testIntrebareText']->innertext, $_SESSION['textVariantaA'], $_SESSION['textVariantaB'], $_SESSION['textVariantaC'] , $_SESSION['raspunsCorectIntrebare'])
 );
 $csvName = $_SESSION['login_user'] . "_test.csv";
 $fp = fopen($csvName, 'a');

@@ -14,11 +14,11 @@
 
 
     <?php
-
     include('../../ConectareaUseruluiLaWebsite/SesiuniSiConfig/sesiuniActiveRomania.php');
-    include('../../IncludedNavbars/navbarRomania.html');
     if ($_SESSION['login_user'] != "admin")
         header("location: ../../HomePages/RomaniaHomePage.html");
+    
+    include('../../IncludedNavbars/navbarRomania.html');
 
     ?>
 
