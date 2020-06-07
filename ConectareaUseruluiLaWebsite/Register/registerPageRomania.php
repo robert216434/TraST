@@ -173,8 +173,9 @@
                 $datanasteriiErr = "Evitati caracterele speciale";
                 $eroare = 1;
             }
-            if (!preg_match("/[1-2][0,9][0-9][0-9].[0,1][0-2].[0-3][0-9]/", $date))
-                $eroare = 1;
+            if (!preg_match("/[1-2][0,9][0-9][0-9].[0,1][0-2].[0-3][0-9]/", $datanasterii))
+                {$eroare = 1;
+                    $datanasteriiErr = "formatul datei de nastere este invalid";}
         }
 
         if (empty($_POST["telefon"])) {

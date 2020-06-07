@@ -173,6 +173,11 @@
                 $datanasteriiErr = "avoid special characters";
                 $eroare = 1;
             }
+
+            if (!preg_match("/[1-2][0,9][0-9][0-9].[0,1][0-2].[0-3][0-9]/", $datanasterii))
+               { $eroare = 1;
+                $datanasteriiErr = "invalid data format";}
+
         }
 
         if (empty($_POST["telefon"])) {
