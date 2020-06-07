@@ -114,9 +114,6 @@ function get($index){
     }
     else $variantaC = 0;
 
-    echo $_SESSION['raspunsVariantaA'];
-    echo $_SESSION['raspunsVariantaB'];
-    echo $_SESSION['raspunsVariantaC'];
 }
 
 $pageWasRefreshed = isset($_SERVER['HTTP_CACHE_CONTROL']) && $_SERVER['HTTP_CACHE_CONTROL'] === 'max-age=0';
