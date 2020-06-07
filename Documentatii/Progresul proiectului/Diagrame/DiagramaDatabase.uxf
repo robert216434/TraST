@@ -1,0 +1,22 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>560</x><y>270</y><w>210</w><h>310</h></coordinates><panel_attributes>Userdb
+--
+user
+--
+username = varchar(50)
+password = varchar(50)
+punctaj = int(11)
+nume = varchar(100)
+localitate = varchar(30)
+email = varchar(50)
+datanasterii = date
+telefon = varchar(11)
+created_at = datetime
+updated_at = datetime
+semne = varchar(218)
+semneAnglia = varchar2(278)
+legislatie = varchar(10)
+legislatieAnglia = varchar(13)
+
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ro">
+   <head>
+    <title>Documentatie progresul proiectului</title>
+    <link rel="stylesheet" href="Scholarly.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="TraST documentatie">
+    <meta name="keywords" content="HTML,CSS,CSV,JavaScript">
+    <meta name="author1" content="Filip George-Noris">
+    <meta name="author2" content="Martonca Robert-Octavian">
+    <meta name="author3" content="Nicoria Alexandru-Florin">
+   </head>
+   <body>
+       <header>
+          <h1>Raportul aplicatiei TraST</h1>
+
+       </header>
+      <div role="contentinfo">
+         <ol role="directory">
+            <li><a href="#introducere"><span>1. </span>Introducere</a></li>
+            <li><a href="#tehnologiiUtilizate"><span>2. </span>Tehnologii utilizate</a></li>
+            <li><a href="#modulDeLucruLaProiect"><span>3. </span>Modul de lucru la proiect</a></li>
+            <li><a href="#arhitecturaSiInterfata"><span>4. </span>Arhitectura si interfata</a></li>
+            <li><a href="#etapeIntermediare"><span>5. </span>Etape intermediare</a></li>
+            <li><a href="#bazaDeDate"><span>6. </span>Baza de date</a></li>
+            <li><a href="#stadiulActulAlProiectului"><span>7. </span>Stadiul actual al proiectului</a></li>
+            <li><a href="#lucruriCeArMaiPuteaFiFacuteLaProiect"><span>8. </span>Lucruri ce ar mai putea fi facute la proiect</a></li>
+            <li><a href="#Referinte"><span>9. </span>Referinte</a></li>
+         </ol>
+         <dl>
+            <dt>Membrii echipei</dt>
+            <dd>
+               <a href="https://github.com/norisfilip">Filip George-Noris</a> <br>
+               <a href="https://github.com/robert216434">Martoncă Robert-Octavian</a> <br>
+               <a href="https://github.com/florin1999">Nicoria Alexandru-Florin</a>
+            </dd>
+         </dl>
+      </div>
+
+      <section id="introducere">
+        <h2><span>1. </span>Introducere</h2>
+        <p>
+          Aplicatia <a href="https://github.com/robert216434/TraST">TraST</a> are scopul de a fi un mediu de invatare al legislatiei si al semnelor de circulatie al tarilor Romania si Anglia, compararea semnelor de circulatie a tarilor Romania, Austria, UK, Franta, Estonia, Danemarca si Cehia si realizarea testelor de dobandire a permisului de conducere in Romania.
+        </p>
+      </section>
+
+      <section id="tehnologiiUtilizate">
+        <h2><span>2. </span>Tehnologii utilizate</h2>
+        <p>
+          <img src="procentLimbajeFolosite.png" alt="No image found">
+          <br>
+          <b>Back-end:</b> PHP.
+          <br>
+          <b>Front-end:</b> HTML, CSS, JavaScript, AJAX.
+          <br>
+          <b>Baza de date:</b> MySQL, phpMyAdmin.
+        </p>
+      </section>
+
+      <section id="modulDeLucruLaProiect">
+        <h2><span>3. </span>Modul de lucru la proiect</h2>
+        <p>
+          La inceput, inainte de a incepe munca propriu-zisa la proiect am stabilit cum vom lucra asta insemnand stabilirea de deadline-uri pentru anumite etape, intalniri periodice pentru impartirea task-urilor, integrarea partilor proiectului si rezolvarea bug-urilor aparute pe parcurs. Pentru versionare am folosit platforma <a href="https://github.com/">GitHub</a>.
+        </p>
+      </section>
+
+      <section id="etapeIntermediare">
+        <h2><span>4. </span>Etape intermediare</h2>
+        <p>
+          1. Dezvoltarea unei interfete grafice responsive. Interfata marcata în HTML5 si validata urmarind standardele Consortiului web. Crearea foilor de stiluri în CSS3.
+          <br>
+          2. Testare interfata grafica.
+          <br>
+          3. Crearea unei baze de date.
+          <br>
+          4. Functionalitatea paginilor clasament si profil, realizarea conexiunii cu baza de date si afisarea informatiilor corespunzatoare.
+          <br>
+          5. Crearea scraper-ului pentru legislatie si semne de circulatie pentru Romania si Anglia, modificarea informatiilor pentru a fi valide conform standardelor Consortiului web si afisare stilizata in pagina.
+          <br>
+          6. Functionalitate login, logout, afisare informatii profil, pagina administrare, interfata grafica dinamica (afisare buton login, logout, profil, administrare) in functie de rolul utilizatorului.
+          <br>
+          7. Crearea scraper-ului pentru pagina de teste, alegerea unui site si intelegerea acestuia pentru a putea prelua in timp real intrebarile testelor si imaginile atasate. Logica testului (test trecut, picat, alegere variante, verificare raspuns corect).
+          <br>
+          8. Creare sistemului de punctaj si stocarea in baza de date pentru paginile de legislatie, semne de circulatie si teste.
+          <br>
+          9. Creare paginii de administrare si functionalitatea acesteia, aceasta pagina poate fi accesata doar de administratorul aplicatiei. Permite realizarea operatiilor de tip <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a>.
+          <br>
+          10. Testing asupra integrarii, unitatilor.
+          <br>
+          11. Refactorizare.
+          <br>
+          12. Finalizarea si verificare documentatiei.
+        </p>
+      </section>
+
+      <section id="arhitecturaSiInterfata">
+        <h2><span>5. </span>Arhitectura si interfata</h2>
+        <p>
+          Diagrama Client-Server-Baza de date a aplicatei TraST
+          <img src="Diagrame/DiagramaClientServerDatabase.png" alt="No image found">
+          <br>
+          Diagrama structurii bazei de date a aplicatiei TraST
+          <br>
+          <img src="Diagrame/DiagramaDatabase.png" alt="No image found">
+          <br>
+          Diagrama structurii aplicatiei TraST
+          <img src="Diagrame/DiagramaStructuraSite.jpg" alt="No image found">
+          
+          <br>
+
+          Interfata aplicatiei TraST
+          <br>
+          <img src="interfataTraSTacasaRomania.png" alt="No image found">
+          <img src="interfataTraSTacasaAnglia.png" alt="No image found">
+        </p>
+      </section>
+
+      <section id="bazaDeDate">
+        <h2><span>6. </span>Baza de date</h2>
+        <p>
+          Baza de date este creata in <a href="https://ro.wikipedia.org/wiki/MySQL">mySQL</a> cu ajutorul 
+        <a href="https://www.phpmyadmin.net/">PHPmyAdmin</a>.
+        </p>
+      </section>
+
+      <section id="stadiulActulAlProiectului">
+        <h2><span>7. </span>Stadiul actual al proiectului</h2>
+        <p>
+          Aplicatia ofera functionalitatile urmatoare: o interfata grafica usor de utilizat si atractiva. Utilizatorul are posibilitatea de a invata <b>legislatia </b>si<b> semnele de circulatie</b> din <b>Romania</b> sau <b>Anglia</b>, poate compara semnele de circulatie dintre mai multe tari pentru a vedea diferentele sau asemanarile, poate face teste pentru categoriile <b>A-A1-A2-AM, B-B1, C-C1, D-D1, E</b>, adica toate categoriile din Romania, la sfarsit poate vedea la care intrebari a raspuns corect cu ajutorul unui fisier de tip <b>CSV</b>, in acest fisier este stocat titlul intrebarii, variantele de raspuns si daca utilizatorul a raspuns corect sau nu la intrebare.
+        </p>
+      </section>
+
+      <section id="lucruriCeArMaiPuteaFiFacuteLaProiect">
+        <h2><span>8. </span>Lucruri ce ar mai putea fi facute la proiect</h2>
+        
+          <ul> 
+          <li>Scraping si implementare teste pentru Anglia.</li>
+          <li>Statistici despre utilizatori: media de timp a navigarii pe site, care este pagina cea mai accesata etc.</li>
+          </ul>
+      </section>
+
+      <section id="Referinte">
+        <h2><span>9. </span>Referinte</h2>
+        
+          <ul> 
+          <li><a href="https://thehighway-code.co.uk/highway/code/uk/uk.html">Site folosit pentru scraping-ul legislatiei din Anglia</a></li>
+          <li><a href="http://www.euroavocatura.ro/print2.php?print2=lege&idItem=1344">Site folosit pentru scraping-ul legislatiei din Romania</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Comparison_of_European_road_signs">Site folosit pentru scraping-ul utilizat la compararea tarilor</a></li>
+          <li><a href="https://ro.wikipedia.org/wiki/Indicatoarele_rutiere_din_Rom%C3%A2nia">Site folosit pentru scraping-ul indicatoarelor din Romania</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Road_signs_in_the_United_Kingdom">Site folosit pentru scraping-ul indicatoarelor din Anglia</a></li>
+          <li><a href="https://freesfx.co.uk/">Site folosit pentru sunetele semaforului</a></li>
+          <li><a href="https://www.freeimages.com/">Site-ul 1 folosit pentru imaginile folosite in aplicatie</a></li>
+          <li><a href="https://pixabay.com/ro/images/search/masini/?fbclid=IwAR1w8CkqUiBBWgMHZj89gmYJOL3-Ad-cb5fgIoiYZTgXNnRRkh5Ov_gUnsQ">Site-ul 2 folosit pentru imaginile folosite in aplicatie</a></li>
+          <li><a href="https://www.autoelev.ro/">Site folosit pentru scraping-ul intrebarilor la testele de dobandirea a permisului in Romania</a></li>
+
+          </ul>
+      </section>
+
+   </body>
+</html>
