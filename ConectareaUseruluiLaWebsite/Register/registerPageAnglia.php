@@ -174,7 +174,7 @@
                 $eroare = 1;
             }
 
-            if (!preg_match("/[1-2][0,9][0-9][0-9].[0,1][0-2].[0-3][0-9]/", $datanasterii))
+            if (!preg_match("/[1-2][09][0-9][0-9].[01][0-9].[0-3][0-9]/", $datanasterii))
                { $eroare = 1;
                 $datanasteriiErr = "invalid data format";}
 
@@ -235,7 +235,7 @@
                 $legislatieAnglia = "0000000000000";
                 $semne = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
                 $semneAnglia = "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000";
-                $statement2 = $db->prepare("INSERT INTO user VALUES (?,?,0,0,?,?,?,?,?,CURRENT_DATE,CURRENT_DATE,'$legislatie','$legislatieAnglia','$semne','$semneAnglia')");
+                $statement2 = $db->prepare("INSERT INTO user VALUES (?,?,0,?,?,?,?,?,CURRENT_DATE,CURRENT_DATE,'$legislatie','$legislatieAnglia','$semne','$semneAnglia')");
                 $statement2->bind_param("sssssss", $username, $password, $name, $localitate, $email, $datanasterii, $telefon);
 
                 $statement2->execute();
