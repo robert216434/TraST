@@ -128,3 +128,16 @@ li {
 	font-style: normal;
 	list-style-type: square;
 }
+
+@media screen and (max-width: 600px) {
+
+	.continut {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.content {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+  }
