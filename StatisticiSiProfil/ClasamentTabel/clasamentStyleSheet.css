@@ -23,7 +23,7 @@ body {
 .clasament-item {
   background-color: yellow;
   border-collapse: collapse;
-  width: 100%;
+width: auto;
 }
 
 .clasament-item th, .clasament-item td {

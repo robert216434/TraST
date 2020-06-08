@@ -2,11 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .butoaneJos {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .butoaneJos button {
@@ -43,9 +45,21 @@ img {
 }
 
 .timerCorectGresit {
-  font-family: 'Arial';
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
   font-style: oblique;
-  font-weight: bolder;
+  font-family: 'Arial';
+  
+
+}
+
+span{
+
+  margin: 0 5px;
+
 }
 
 .intrebareTest {

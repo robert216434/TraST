@@ -18,7 +18,7 @@ if (!isset($_SESSION)) {
 
 <body onload="ceas(); setInterval('ceas()', 1000 )">
 
-
+<div class="backgroundImage" style="background-image: url('../../MediaContent/imagini/audi.jpg');">
   <?php
 
   include("../SesiuniSiConfig/configurareBD.php");
@@ -57,7 +57,7 @@ if (!isset($_SESSION)) {
   require_once('../../IncludedNavbars/navbarAnglia.html');
   ?>
 
-  <div class="backgroundImage" style="background-image: url('../../MediaContent/imagini/audi.jpg');">
+
 
     <div class="card">
       <h3 class="form-text">Login</h3>

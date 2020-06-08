@@ -15,8 +15,8 @@
 
 
   <div class="timerCorectGresit">
-    <pre>Timp ramas: <span id="time">30:00</span>   Raspunsuri corecte: <span id="raspunsuriCorecte"></span>   Raspunsuri gresite: <span id="raspunsuriGresite"></span>
-</pre>
+    <p>Timp ramas: <span id="time">30:00</span>   Raspunsuri corecte: <span id="raspunsuriCorecte"></span>   Raspunsuri gresite: <span id="raspunsuriGresite"></span>
+</p>
   </div>
   <div id="intrebare" class="center">
 
