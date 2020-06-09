@@ -23,7 +23,7 @@ body {
 .clasament-item {
   background-color: yellow;
   border-collapse: collapse;
-width: auto;
+width: 100%;
 }
 
 .clasament-item th, .clasament-item td {
@@ -114,5 +114,13 @@ width: auto;
 @media screen and (max-width: 940px) {
   .clasament {
     overflow-x: auto;
+  }
+
+  .clasament-item {
+    width: auto;
+  }
+
+  .clasament-itemAng {
+    width: auto;
   }
 }
