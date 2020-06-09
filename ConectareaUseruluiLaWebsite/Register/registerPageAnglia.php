@@ -200,7 +200,7 @@
                         $eroare = 1;
                     }
             }
-            $statement = $db->prepare("SELECT username FROM useri WHERE username = ?");
+            $statement = $db->prepare("SELECT username FROM user WHERE username = ?");
             $statement->bind_param("s", $username);
             $sqlusername = $statement->execute();
             $statement->bind_result($result);
@@ -212,7 +212,7 @@
                 $usernameErr = "username already exists";
                 $eroare = 1;
             }
-            $statement1 = $db->prepare("SELECT username FROM useri WHERE email = ?");
+            $statement1 = $db->prepare("SELECT username FROM user WHERE email = ?");
             $statement1->bind_param("s", $email);
             $statement1->execute();
             $statement1->bind_result($result1);
